@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Moving Site to Github Pages
-date: 2015-12-18 12:225:00 -08:00
+date: 2015-12-18 12:22:00 -08:00
 type: post
 published: true
 status: publish
