@@ -1,0 +1,39 @@
+---
+layout: post
+title: '"Hacking" iCloud for Deleted Celebrity Nudes'
+date: 2014-09-04 20:08:52.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>A lot of noise has been made recently about some nude celebrity photos that have made their way around the Internet, <a href="http://www.people.com/article/jennifer-lawrence-nude-photos">such as those of Jennifer Lawrence</a>. Initially it was thought to have been a compromise of Apple's iCloud service, but, really it was because<a href="https://isc.sans.edu/forums/diary/Apple+iCloud+Security+Incident/18605" target="_blank"> Apple failed to properly rate-limit an API that allowed rapid brute-force guessing of passwords</a>. <a href="http://www.apple.com/pr/library/2014/09/02Apple-Media-Advisory.html" target="_blank">Apple claims it was a targeted attack</a> on these specific users and tells users to <a href="http://support.apple.com/kb/ht4232" target="_blank">enable two-factor authentication and use a strong password</a>.</p>
+<p>Getting someone's iCloud credentials, <a href="http://thenextweb.com/apple/2014/09/01/this-could-be-the-apple-icloud-flaw-that-led-to-celebrity-photos-being-leaked/" target="_blank">either by brute force</a> or <a href="http://sacramento.cbslocal.com/2014/09/02/apple-intruders-had-information-to-guess-celebrities-personal-security-questions/" target="_blank">guessing the answers to security questions</a>, is all well and good. It certainly explains these photos were acquired and posted. It doesn't adequately explain how <a href="http://www.people.com/article/jennifer-lawrence-FBI-investigating-phone-hack" target="_blank">supposedly deleted photos from a celebrity's iPhone</a> were posted online. </p>
+<p><a href="https://www.linkedin.com/in/motisagey">Moti Sagey</a>, whom I work with at Check Point, actually <a href="http://www.reddit.com/r/netsec/comments/2f8u6i/something_i_discovered_by_mistake_that_can/" target="_blank" title="Link: http://www.reddit.com/r/netsec/comments/2f8u6i/something_i_discovered_by_mistake_that_can/">came up with the idea of how this might have happened.</a> He discovered a tool called <a href="http://www.dr-fone.com/index.html" target="_blank">dr.fone</a> that can "recover data from iOS devices, iCloud backup, and iTunes backup." Curious, Moti and I downloaded and installed the tool, attempting to recover data from our own iCloud backups. Lo and behold: there they were. <i>Up to 3 iCloud backups for each device we own</i>. </p>
+<div class="posthaven-gallery" id="posthaven_gallery[716384]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/Capture1.PNG" />
+        </p>
+</p></div></p>
+<p>A note about the way iCloud backups work: they will only happen from your iOS device <i>if the device is on WiFi</i> and <i>is plugged in</i>--usually at night. They could also be triggered manually, but let's face it: how often do regular people do that? Almost never. </p>
+<p>While the majority of my devices have 3 consecutive days of backups, one in particular had quite a gap in their backup dates. Which, for most celebrity-types, may be pretty common. Movie stars are like normal people: they <i>rarely charge their phone</i> and are <i>rarely</i><i> on WiFi outside of their own home. </i>Given how busy some celebrities are, it doesn't seem inconceivable that they could go months without being <i>at home on their WiFi</i> and <i>charging their iPhone</i> at the same time.</p>
+<p>What's in an iCloud backup, you ask? Quite a lot, as it turns out, including the camera roll:</p>
+<div class="posthaven-gallery" id="posthaven_gallery[716385]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/Capture2.PNG" />
+        </p>
+</p></div></p>
+<p>A popular celebrity with easy to guess iCloud username and password plus a rarely backed up iPhone plus a tool like dr.fone equals access to potentially naughty photos the celebrity thought were deleted months ago. Voila!</p>
+<p>Of course, this is <a href="https://www.nikcub.com/posts/notes-on-the-celebrity-data-theft/" target="_blank">just the tip of the iceberg</a> of what criminals do in order to get illicit photos and videos from celebrities, but let's be honest: why go through the trouble of social engineering, installing illicit remote access tools, and stealing authentication keys when you can take the much easier route of brute force guessing a weak password and/or easily answer their password reset questions?</p>
+<p>People are blaming Apple here, when, last we checked, you had to <i>opt-in</i> to iCloud backups. Even if you choose to opt-in, you can choose what elements of your phone to back up. The fact that Apple keeps a few of them on-hand is, in fact, a good thing. Good backups are just as important as choosing a strong password or using two-factor authentication when its available. While there is some inherent risk in backing stuff up to the cloud, doing so is a greater good than <i>never backing up your device</i>, which is what would happen for most people without iCloud doing it for them.</p>
+<p>Since it appears iCloud only keeps the last 3 device backups, ensuring that iCloud backs up your device regularly will also reduce the risk someone might "recover" an old nude photo you thought you deleted. Of course, if you want to reduce the risk even further, don't take the photos with your mobile phone, or at least don't do it with the default camera application. Use an ephemeral messaging app like <a href="https://wickr.com/" target="_blank">Wickr</a> or <a href="https://telegram.org/" target="_blank">Telegram</a>, at least until <a href="http://dankaminsky.com/2014/09/03/not-safe-for-not-working-on/" target="_blank" title="Link: http://dankaminsky.com/2014/09/03/not-safe-for-not-working-on/">phones get an incognito mode similar to browsers</a>.</p>
+<p><b>Authorship Note</b>: If Posthaven would let me mark more than one author, I would credit Moti Sagey as one. Especially since this was his idea, which I put a few refinements on.</p>

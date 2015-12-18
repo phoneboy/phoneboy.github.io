@@ -1,0 +1,32 @@
+---
+layout: post
+title: How to COPE with BYOD
+date: 2012-12-05 00:12:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- byod
+- mobile phones
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>If you've been in the IT industry long enough, you'll start seeing the same concepts "reinvented" every few years or so.</p>
+<p>The current panacea is so-called Bring Your Own Device--the idea that an end user can use their own technology devices in a corporate setting while having some level of access to corporate data. While we went through this with laptops and personal computers over the years, now the devices we are bring our own of? Mobile phones/tablets.</p>
+<p>Another acronym I've heard recently describes the state of IT, again, as long as I've been in it--Corporate Owned, Personally Enabled. Here, the idea is that a corporate-owned asset is used for an employee's personal needs. This has been the case with corporate-owned PCs forever without any formal policy for the last couple of decades. Now we're starting to see this with mobile devices, either with or without the use of third party tools.</p>
+<p>The reality is that, regardless of whether companies adopt BYOD, COPE, something else, or neither, the reality is, employees are going to use personal devices to do work. And, likewise, use corporate devices for "personal use." This has always been the case and will always be the case, regardless of any formal policies to the contrary.</p>
+<p>From a security point of view, this creates some rather obvious issues. On corporate-owned devices, some sort of "device management" or "Endpoint Security" offering is installed, which users tolerate to varying degrees. (I happen to like Check Point's Endpoint Security offering, but I will admit, I'm biased.) BYOD won't work because users are often asked to submit "device management" or an "Endpoint Security" installation in order to use their own device on the corporate network.</p>
+<p>But ask yourself: what is it that you're really trying to protect on that endpoint? Prevent malicious software? You have a properly segmented network, right? You have the technology to detect any malicious traffic from that segment, right? Good. That should take care of it.</p>
+<p>But what if the software doesn't "phone home" while on the corporate network (or generate malicious traffic), but collects data and then sends it out over the mobile operator's network? Modern mobile operating systems have these things called sandboxes that prevent one app from reading data from another in the first place. Obviously, if you're jailbroken or rooted, all bets are off.</p>
+<p>And malicious apps, while not unheard of, are nearly non-existent in the official App Stores for iOS or Android. Same with potential privilege escalation-type attacks in iOS and Android. Not impossible but a lot harder to pull off, given that Android and (moreso) iOS are pretty secure out-of-the-box.</p>
+<p>Really there's only one thing to worry about on these devices: the corporate data. This data needs to be protected. Which is generally pretty easy to do assuming only a trusted application is able to access the data, the regular OS protections are in place (i.e. device isn't rooted or jailbroken). And, of course, the data has to come on and off the device in a secure manner (e.g. either with strong encryption or using a physical access mechanism).</p>
+<p>Once you have the magic, trusted app (or suite of apps) to access, work with, and secure the small amounts of corporate data the device can work with, congratulations! You've now eliminated the headache of managing potentially unknown devices in the hands of users who will do everything they can to thwart your security controls anyway. If users want to work with corporate data, they can use the "trusted" apps to do it, which should have appropriate hooks back to corporate to validate whether you are able to even use the data and, if you or your device goes rogue, wipe the data from your device without wiping the entire device (which has personal data on it).</p>
+<p>While I believe there are great solutions along these lines (yet), this is the only kind of solution I believe makes any sense in the long term. People will be able to bring their own devices and access business data while infosec will rest easy knowing business data is still  accessed and stored safely.</p>
+<p>It's a BYOD solution everyone can COPE with.</p>

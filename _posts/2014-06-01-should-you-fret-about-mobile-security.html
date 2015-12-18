@@ -1,0 +1,42 @@
+---
+layout: post
+title: Should You Fret About Mobile Security?
+date: 2014-06-01 05:52:36.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<div>
+<p>From <a href="http://www.citeworld.com/article/2304850/mobile-byod/stop-fretting-about-mobile-security-says-palo-alto-networks-founder.html">Stop fretting about mobile security, says Palo Alto Networks founder</a>:</p>
+<blockquote>
+<p>“What I often hear from customers is that 'users have a mobile and they have corporate email and they have Dropbox and I'm afraid they will upload a PDF via Dropbox to their personal account'. Well, what about your Windows users? They've been doing that for the last ten years! Nobody stopped them using Dropbox on their browser for the last ten years.”</p>
+</blockquote>
+<p>So says Nir Zuk, founder and CTO of Palo Alto Networks.</p>
+<p>And you know what: he's right. Not necessarily about Dropbox since Dropbox hasn't been around for ten years, but because if you've given people access to a web browser in your organization, you've basically had little to no control over the “applications” they can run. Because even ten years ago, you could run a lot of “applications” organizations so desperately want to control today.</p>
+<p>Of course we had URL filtering ten years ago, which can be used to control what people can use with a web browser. But it wasn't as widely used and unless you were using explicit proxies, HTTPS was a pretty big blind spot. And, really, that's only a partial solution since you might want to allow some parts of a web-based application and not others. Doing that solely based on URLs might not always be possible.</p>
+<p>But I disagree that you have no control over what end users do on their PCs. Things like the “dead but not going anywhere anytime soon” Anti-Virus/Anti-Malware, firewall, Application Whitelisting, Media Encryption and Port Protection, and a host of other tools, if properly deployed and are monitored, give you something to protect yourself from the malicious things your users get inadvertently from the Internet.</p>
+<p>And, of course, segmentation helps too. Not putting your user machines and servers on the same network, using a firewall to media and control access by user, application, service and yes, Nir Zuk, ports.</p>
+<blockquote>
+<p>In fact, once you remember that the browser has made you liable to these kinds of threats for a long time, mobile devices start to look like an attractive option. Zuk claims “mobile devices open up a lot of opportunities for being more secure than today because they do allow the opportunity  to control movement of data between devices, and because of the way they're built, the operating system and the controls – especially in iOS 7 and hopefully soon in Android.”</p>
+</blockquote>
+<p>He's absolutely right here. Mobile operating systems are built to be more secure from the ground up. However, you're assuming the device is not rooted or jailbroken, which removes many of the protections these operating systems have in place.</p>
+<p>And then there's the data these devices can access and use. What are you doing to ensure data remains protected on these devices? Nir's right there is opportunity to do this better on mobile devices but right now it's an “all or nothing” approach. VDI, Mobile Device Management and secure container technologies are all variations on this approach and users are adverse to all of them.</p>
+<p>And then there's the whole lack of visibility over what's going on with the mobile device. At least with a PC you get some, on a mobile device? Not so much. </p>
+<blockquote>
+<p>“You can have a firewall that denies all incoming traffic and bad things still come in,” [Zuk] points out, because Web apps and cloud services mean “the firewall doesn't control access into the network.” Even more bluntly, he's prone to suggesting that “I strongly recommend you take your firewall out and replace it with an Ethernet cable – it will improve the performance and improve the management. And no, I’m not joking.”</p>
+</blockquote>
+<p>Again he's right insofar as replacing a firewall with an Ethernet cable will improve performance and improve management (if you consider removing something to manage an improvement).<br />
+However, this advice is utterly clueless as it ignores decades of evidence to the contrary, not to mention the fact Nir Zuk's company Palo Alto Networks <strong>sells</strong> firewalls. </p>
+<p>You know when Windows XP dramatically improved security? In Service Pack 2 when the built-in firewall was enabled by default. Yes, the attacks moved up the stack as a result but a properly configured firewall–even one that only blocks on ports and IPs–is better than no firewall at all. </p>
+<p>So should you do about mobile device usage in your enterprise? Depends on your policy and depends on what your critical assets are. Should you “fret” about it? No more than anything else. Just realize mobile devices present unique challenges–and opportunities. </p>
+</div>

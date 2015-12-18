@@ -1,0 +1,195 @@
+---
+layout: post
+title: 'Blast from the CHKP Past: Can''t Talk to Translated IP from Internal Net'
+date: 2013-11-04 07:54:12.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>It's pretty obvious from looking through the number of 404s I'm seeing in Google's Webmaster tools that a lot of pages still link to old stuff I wrote about Check Point FireWall-1. I'm actually trying to "fix" these 404s now by resurrecting some of the old content.  Not updating it, of course, but at least making the links point to something semi-useful, if historical.</p>
+<p>This is one of those articles, obviously not at it's original URL, but the original URLs will point here. What amazes me about this particular article is that it's still relevant today as NAT really hasn't fundamentally changed in the Check Point products for some time. The basic concepts are still the same, too, and other than the implementation details, is probably relevant for other security products, too. </p>
+<p>Bottom line: NAT only works if the firewall is in the path of the communication. How do you know? Follow the bouncing packet, otherwise known as Troubleshooting 101. </p>
+<p>Hit the break to see this old FAQ in all its ASCII network mapped glory.</p>
+<p><span id="more"></span>
+<p>When implementing address translation, the unspoken assumption is the firewall will always be between the two machines talking to each other. For external machines accessing internal machines, this is a safe assumption. In the case where internal hosts are accessing internal hosts, this is not always the case.</p>
+<p>Another important thing to note is that NAT rules are processed in the order they are listed. Once a packet matches a rule in the rulebase, subsequent rules are not processed for that packet. NAT rules are <em>not</em> applied cumulatively.</p>
+<p>To demonstrate these principles in action, here is an example network:</p></p>
+<pre>Internet Segment (204.32.38.x)
+-------------------------------- (204.32.38.1)
+                                   FireWall
+                                  (10.0.0.1)
+                                       |
+                                       |
+                                (10.0.255.254)
+                                    Router
+                         (10.1.0.1)        (10.3.0.1)
+                             |                  |
+       Segment A (10.1.x.x)  |                  | Segment B (10.3.x.x)
+                             |                  | 
+</pre>
+<p>The firewall has two interfaces: 204.32.38.1 and 10.0.0.1. The router has three interfaces: 10.0.255.254, 10.1.0.1, and 10.3.0.1. Each interface of the router has a class B netmask (255.255.0.0).</p>
+<p>Let's assume an "Externally" accessible SMTP server is at 10.1.2.25 and it has an external address of 204.32.38.25 (via NAT). There is some other internal SMTP server (10.3.4.25) that tries to access the "external" SMTP server via the external address. Assume the following NAT rules:</p></p>
+<table>
+<tbody>
+<tr>
+<th><strong> </strong></th>
+<th><strong>Original</strong></th>
+<th><strong>Translated</strong></th>
+</tr>
+<tr>
+<th><strong>No</strong></th>
+<th><strong>Source</strong></th>
+<th><strong>Destination</strong></th>
+<th><strong>Service</strong></th>
+<th><strong>Source</strong></th>
+<th><strong>Destination</strong></th>
+<th><strong>Service</strong></th>
+</tr>
+<tr>
+<td>1</td>
+<td>Any</td>
+<td>204.32.38.25</td>
+<td>Any</td>
+<td>Orig</td>
+<td>10.1.2.25(S)</td>
+<td>Orig</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10.x.x.x</td>
+<td>Any</td>
+<td>Any</td>
+<td>204.32.38.1(H)</td>
+<td>Orig</td>
+<td>Orig</td>
+</tr>
+</tbody>
+</table>
+<p>10.3.4.25 tries to initate a connection to 204.32.38.25. Routing will eventually take this packet to the firewall. The packet is accepted by the firewall's security policy and is then processed by NAT. The first rule that matches is rule 1, which translates the destination of the packet from 204.32.38.25 to 10.1.2.25. The "source" of the packet is not changed (rule 1 says not to touch it). The packet will then be routed to 10.0.255.254, then 10.1.2.25.</p>
+<p>When 10.1.2.25 sends its "reply," it will be sent to 10.3.4.25 (the "source" of the connection attempt). The reply is routed to 10.1.0.1 and then directly to 10.3.4.25. 10.3.4.25 is expecting replies from 204.32.38.25 (who it thinks it tried to connect to), not 10.1.2.25, so they are dropped (as they should be). If a machine on 10.1.x.x were to access 204.32.38.25, the same thing would happen except the packet would travel one less hop.</p>
+<p>What would happen if the rules were reversed (i.e. rule 2 was listed before rule 1)? When 10.3.4.25 tries to access 204.32.38.25, the packet gets routed to the firewall and passes through the rulebase. NAT then would rewrite the source of the packet to be 204.32.38.25. The destination of the packet would still be 204.32.38.25 (i.e. it does not get translated), but gets routed out the internal interface (or at least it should if you've configured NAT correctly. ;-). The internet router sees this packet and routes it back to the firewall (it's an external address, after all). The packet would ping pong back and forth until the TTL expires.</p>
+<p>One reason why you might connect to the translated IP address is because your internal client's DNS server points to it. You can resolve this problem by implementing split-horizon DNS, i.e. different DNS servers for the internal and external networks. An internal DNS server reflects the internal IP address for a host and the external DNS server reflects the externally resolvable IP addresses for the host. Internal clients will use the internal DNS server. You can also put a host entry on the local system pointing at the internal address.</p>
+<p>Other than implementing split-horizon DNS, can you get around this problem? There are two methods you can use to get around this problem, which I have documented below.</p></p>
+<h4>
+<a></a><a></a>Put Externally Accessible Hosts on a DMZ</h4>
+<p>This actually makes more sense from a security standpoint because you can provide more control over access if externally accessible host are all on their own segment. To create a DMZ, you would have to add a third interface to your firewall with a different logical subnet and move the accessible hosts to that subnet.</p></p>
+<pre>Internet Segment (204.32.38.x)
+-------------------------------- (204.32.38.1)          DMZ segment (172.31.0.x)
+                                   FireWall (172.31.0.0)------------------------
+                                  (10.0.0.1)
+                                       |
+                                       |
+                                (10.0.255.254)
+                                    Router
+                         (10.1.0.1)        (10.3.0.1)
+                             |                  |
+       Segment A (10.1.x.x)  |                  | Segment B (10.3.x.x)
+                             |                  | 
+</pre></p>
+<p>This puts the firewall between the client and the server, thus solving the NAT problem.</p></p>
+<h4>
+<a></a>The Dual-NAT Trick</h4>
+<p>The success or failure of this trick is dependent on the OS that you use for your firewall and may even depend on the environment. In most cases, it does not work. When a packet is received in one interface and is routed out that same interface, the OS's TCP/IP stack will instead issue an ICMP Redirect with the system's untranslated IP address. Depending on the circumstances, this connection may either never take place or take a long time to establish. FireWall-1 can't do anything about this. Assuming my trick does work for you, you are effectively doubling the amount of traffic that the connection would generate and add additional, unnecessary load to the firewall. The best way to resolve this problem is to simply not use the translated IP address in the internal network.</p>
+<p>In order to insure that the firewall stays between the connection between the two hosts, you will need to create dual NAT rule. The NAT rule will look at both the source and destination of the packet and translate both the source and the destination of the packet. Because the rules are processed in order, the dual NAT rule must come before both your "HIDE" rule and your SMTP server's translation rule as below:</p></p>
+<table>
+<tbody>
+<tr>
+<th><strong> </strong></th>
+<th><strong>Original</strong></th>
+<th><strong>Translated</strong></th>
+</tr>
+<tr>
+<th><strong>No.</strong></th>
+<th><strong>Source</strong></th>
+<th><strong>Destination</strong></th>
+<th><strong>Service</strong></th>
+<th><strong>Source</strong></th>
+<th><strong>Destination</strong></th>
+<th><strong>Service</strong></th>
+</tr>
+<tr>
+<td>1</td>
+<td>10.x.x.x</td>
+<td>204.32.38.25</td>
+<td>Any</td>
+<td>10.0.0.1(H)</td>
+<td>10.1.2.25(S)</td>
+<td>Orig</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Any</td>
+<td>204.32.38.25</td>
+<td>Any</td>
+<td>Orig</td>
+<td>10.1.2.25(S)</td>
+<td>Orig</td>
+</tr>
+<tr>
+<td>3</td>
+<td>10.x.x.x</td>
+<td>Any</td>
+<td>Any</td>
+<td>204.32.38.1(H)</td>
+<td>Orig</td>
+<td>Orig</td>
+</tr>
+</tbody>
+</table>
+<p>What will this do?</p></p>
+<ul>
+<li>All traffic coming from 10.x.x.x that is destined for 204.32.38.25 will get hidden behind 10.0.0.1 (the internal IP address of the firewall) and have a destination of 10.1.2.25.</li>
+<li>All other traffic coming to 204.32.38.25 will keep the original source and have a destination of 10.1.2.25.</li>
+<li>All other traffic coming from 10.x.x.x will get hidden behind 204.32.38.1 (the external IP of the firewall) and keep the original destination.</li>
+</ul>
+<p>The side effect of this is that for each connection to your "internal" SMTP server using the external IP address, you will see the network connection traverse your internal network twice:</p></p>
+<ol>
+<li>Once between the "server" and the FireWall</li>
+<li>Once between the firewall and the "client"</li>
+</ol>
+<p>If you have done this and you still can not access the host in question, use a packet sniffer to determine what is going on. In cases where it will not work, the firewall system will send an ICMP redirect to the client pointing them to the internal host using the untranslated address. Since the client is not expecting to see the host's real IP address, the connection will fail. In this case, you will need to disable ICMP redirects on your host system. The only system I know how to do this on is Solaris, and the command is as follows:</p>
+<p><tt>   /usr/sbin/ndd -set /dev/ip ip_send_redirects 0</tt></p>
+<p>On IPSO, this is done at a per-interface level. If VRRP is running on a particular interface, this is the default behaviour. If you are not running VRRP on a particular interface, then issue the following command if the interface you wish to enable it on is eth-s3p1c0 (add it to /var/etc/rc.local if you wish for this command to be active after a reboot):</p>
+<p><tt>   ipsctl -w interface:eth-s3p1c0:family:inet:flags:icmp_no_rdir 1</tt></p>
+<p>On NT, you can disable ICMP Redirects with NT Service Pack 5 and later by adding or modifying the following registry entry:</p>
+<p><tt>   </tt>HKEY_LOCAL_MACHINESystemCurrentControlSetServicesTcpipParametersEnableICMPRedirects</p>
+<p>This key should be a DWORD set to 0.</p>
+<p>If you know how to do this on other platforms, please contact me so I can update the page.</p>
+<p>Optionally, you can also block ICMP Redirects at the firewall:</p></p>
+<table>
+<tbody>
+<tr>
+<th><a href="http://web.archive.org/web/20041212013800/http://www.phoneboy.com/bin/view.pl/FAQs/CantTalkToTranslatedIPFromInternalNet?sortcol=0&amp;table=3&amp;up=0#sorted_table">No.</a></th>
+<th><a href="http://web.archive.org/web/20041212013800/http://www.phoneboy.com/bin/view.pl/FAQs/CantTalkToTranslatedIPFromInternalNet?sortcol=1&amp;table=3&amp;up=0#sorted_table">Source</a></th>
+<th><a href="http://web.archive.org/web/20041212013800/http://www.phoneboy.com/bin/view.pl/FAQs/CantTalkToTranslatedIPFromInternalNet?sortcol=2&amp;table=3&amp;up=0#sorted_table">Destination</a></th>
+<th><a href="http://web.archive.org/web/20041212013800/http://www.phoneboy.com/bin/view.pl/FAQs/CantTalkToTranslatedIPFromInternalNet?sortcol=3&amp;table=3&amp;up=0#sorted_table">Service</a></th>
+<th><a href="http://web.archive.org/web/20041212013800/http://www.phoneboy.com/bin/view.pl/FAQs/CantTalkToTranslatedIPFromInternalNet?sortcol=4&amp;table=3&amp;up=0#sorted_table">Action</a></th>
+<th><a href="http://web.archive.org/web/20041212013800/http://www.phoneboy.com/bin/view.pl/FAQs/CantTalkToTranslatedIPFromInternalNet?sortcol=5&amp;table=3&amp;up=0#sorted_table">Track</a></th>
+<th><a href="http://web.archive.org/web/20041212013800/http://www.phoneboy.com/bin/view.pl/FAQs/CantTalkToTranslatedIPFromInternalNet?sortcol=6&amp;table=3&amp;up=0#sorted_table">Install-On</a></th>
+</tr>
+<tr>
+<td>1</td>
+<td>Firewall</td>
+<td>any</td>
+<td>icmp-redirect</td>
+<td>drop</td>
+<td> </td>
+<td>Source</td>
+</tr>
+</tbody>
+</table>
+<h4>
+<a></a>Binding the NATted IP address to the Loopback Interface</h4>
+<p>The basic idea is to bind the translated IP address to the loopback interface of the server. On Unix machines, you use a command like</p>
+<p><tt>   ifconfig lo0:0 204.32.38.25 up</tt></p>
+<p>On NT, you will need to add the MS Loopback interface (which you will need to add to the system) and add the IP address to this interface with a netmask of 255.255.255.255. If packets come into the system for the translated IP address (because, for instance, they did not come to the firewall), the system will respond to packets for this IP address. This method does require slightly more administration since now you must also maintain the NAT on the individual servers as well.</p>

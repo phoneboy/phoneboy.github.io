@@ -1,0 +1,36 @@
+---
+layout: post
+title: Federating Identity Tokens
+date: 2007-11-29 00:01:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<div class="posthaven-gallery" id="posthaven_gallery[567283]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/2068490978_0aeeb3caf7_m.jpg" />
+        </p>
+</p></div>
+<p>If you do anything more than passively read web pages online, chances are, you've got an identity somewhere. You have an email address (or 10). You have a login on most every site you interact with (e.g. Google, eBay, Facebook). If you use IM tools, surely you've got a name on each of those services.</p>
+<p>Even in the offline world, you have lots of identities, depending on whom you're talking with: an identification number, social security number, multiple phone numbers, and the list goes on.</p>
+<p>Actually, let's be clear. These aren't identities per-se, they are tokens that uniquely identify you within a specific realm. Let's call them identity tokens for the sake of argument.</p>
+<p>Ideally, I'd like to reduce the number of identity tokens I have to manage. I'll save <a target="_blank" href="http://www.mocaedu.com/mt/">Aswath</a> the trouble of commenting on my post and just say what one solution to that would be: <a target="_blank" href="http://www.openid.net/">OpenID</a>. It has potential to solve this problem, but it's not deployed widely enough.</p>
+<p>But let's make this problem simpler. Let's talk about identity tokens within a single "realm," or multiple realms controlled by the same company, as it were. Best example of that? Jangl.</p>
+<p><a target="_blank" href="http://www.jangl.com/">Jangl</a> provides their "call anyone, anywhere" service through partnerships with a number of different social networks--including Facebook--not to mention their own web portal. Each one of these social networks is a separate realm under which Jangl operates. If Jangl's Facebook application is any indication of how it works in other social networks, Jangl makes it easy to call your buddies/friends within the social network.</p>
+<p>Herein lies the rub. What if I am a member of multiple social networks that the Jangl service is using, or what if I want to use, say, Facebook <em>and </em>Jangl's own web portal? The two identities are treated as <em>different</em>. The main problem? I can't associate the same mobile number to <em>both</em> the Facebook and Jangl account. The main reason? The Facebook and Jangl portal "identities" are treated as different when, in fact, they point to the same person--me.</p>
+<p>Federating these disparate identities within Jangl should be relatively straightforward, or you'd think anyway. I discussed this issue with their support folks and they have a solution to this problem. Essentially all the "accounts" have one thing in common: your mobile phone number. In theory, you should be able to use the same number across all these accounts provided you can provide the associated PIN.</p>
+<p>This doesn't completely work in an ideal fashion, yet. Those of us who are early adopters are likely to have extra problems. As I write this, the Jangl support guys are trying to get my Facebook and Jangl.com accounts linked.</p>
+<p>Given all the problems I'm having within the same company, now imagine having to do this between companies or between organizations. You can see it gets ugly fast.</p>
+<p>OpenID would certainly be one solution to this problem: allow an account to be associated to an OpenID. Accounts that are associated to the same OpenID--with appropriate authentication, of course--could be linked somehow. Or simply use OpenID as the authorization mechanism and drop the realm-specific authentication schemes altogether.</p>
+<p>That being said, there are times--and instances--where I don't necessarily want to be tied back to a single identity. Maybe I'm doing some testing or doing some "stealth" intelligence gathering. OpenID shouldn't be the only option.</p>
+<p>What do you think about all this? How can we federate identities while maintaining the ability to have separate ones if you desire? Opinions are welcome.</p>

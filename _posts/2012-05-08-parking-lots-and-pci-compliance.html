@@ -1,0 +1,35 @@
+---
+layout: post
+title: Parking Lots and PCI Compliance
+date: 2012-05-08 13:17:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- compliance
+- pci
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>Like many things in Computer/Network Security, I've learned many things as a result of my job. Not because I necessarily wanted to learn them :)</p>
+<p>PCI Compliance is one of those things I've encountered a handful of times during my tour of duty at Check Point. I don't even pretend to play an expert on PCI on the Internet, which stands for Payment Card Industry (i.e. companies that process credit cards). The goal of the various PCI standards is pretty simple: ensure the credit card data of customers remains protected as it is captured, stored, and transmitted on the various systems that process it.</p>
+<p>What does this have to do with Parking Lots? Many parking lots, especially in big cities like Seattle, are self-service. You pre-pay with a credit card, get a ticket from the machine, and put it in your windshield. A minimum wage lackey (hereafter referred to as parking lackey) periodically checks the lot to make sure everyone who has parked there has paid, issuing parking tickets for those who have not.</p>
+<p>I parked in one such lot recently in downtown Seattle. They issued me a receipt like this (except both halves were attached and the personally identifiable data was not blacked out):</p>
+<div class="posthaven-gallery" id="posthaven_gallery[567390]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/parking-stub-masked-300x259.jpg" />
+        </p>
+</p></div>
+<p>What was on this stub was the type of card I have and the last four digits of said card. I was asked to place this on my windshield. In plain sight. For anyone to walk by and collect.</p>
+<p>To comply with the posted signs, I did leave the ticket in plain view on my dash, but only the right (smaller) half, which had the least personally identifying information on it. Unfortunately, the parking lackey didn't think I had complied with the rules and issued me a parking violation, which I immediately contested.</p>
+<p>PCI-DSS Requirement 7 is to restrict access to cardholder data by business need to know, where "access rights are granted to only the least amount of data and privileges needed to perform a job." Does the parking lackey need to know what credit card I used to pay my parking fee with? Does he need the last four digits of my credit card? And even if he does (and I'm not sure on what planet that information would be required by a parking lackey), why do I also have to expose this information to the general public?</p>
+<p>I realize that, in the grand scheme of things, this is not a huge data exposure. The number of people that likely saw the relatively small amount of data is pretty close to zero. That said, at least how I read the PCI-DSS 2.0 requirements, this is a clear-cut violation of the guidelines.</p>
+<p>Clearly, I need to keep a sharpie in my car so I can comply with these parking lot rules yet maintain the confidentiality of my personal data.</p>
+<p>Am I right? Is this a violation of PCI guidelines? Do other parking systems do stuff like this?</p>

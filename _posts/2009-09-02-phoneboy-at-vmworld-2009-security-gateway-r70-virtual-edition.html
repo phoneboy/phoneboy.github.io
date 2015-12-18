@@ -1,0 +1,32 @@
+---
+layout: post
+title: PhoneBoy @ VMworld 2009, Security Gateway R70 Virtual Edition
+date: 2009-09-02 13:00:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- Check Point
+- ve
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<div class="posthaven-gallery" id="posthaven_gallery[567364]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/photo-300x225.jpg" />
+        </p>
+</p></div>
+<p>Over the past couple of days, I was out at VMworld 2009 at <a target="_blank" href="http://maps.google.com/maps?ll=37.784173,-122.401557&amp;spn=0.01,0.01&amp;q=37.784173,-122.401557%20%28Moscone%20Center%29&amp;t=h" title="Link: http://maps.google.com/maps?ll=37.784173,-122.401557&amp;spn=0.01,0.01&amp;q=37.784173,-122.401557%20%28Moscone%20Center%29&amp;t=h">Moscone Center</a> in San Francisco, which is a trade show put out by the fine folks at <a target="_blank" href="http://www.vmware.com/">VMware</a>. While it was not my "official" job,  I did do a bit of booth duty at <a target="_blank" href="http://www.checkpoint.com/">Check Point</a>'s booth. It's been a while since I've done that.</p>
+<p>While there, I met a couple people I've been meaning to meet for years: Randy Bias, the guy behind <a target="_blank" href="http://cloudscaling.com/blog/">Cloudscaling</a>, and <a target="_blank" href="http://www.rationalsurvivability.com/blog/" title="Link: http://www.rationalsurvivability.com/blog/">Chris Hoff (a.k.a. Beaker)</a>. I also got to experience first-hand at the show was the absolutely spectacular epic fail that is AT&amp;T's wireless network during a trade show at Moscone Center. Full signal, yet calls were dropping like flies. Data might as well have been GPRS for all the speed I wasn't getting. It was horrible. Why AT&amp;T doesn't have several microcells inside Moscone with either a fiber link or several DS3s for backhaul is absolutely beyond me.</p>
+<p>Meanwhile, back to VMworld and why Check Point was there. We were demonstrating <a target="_blank" href="http://www.crunchbase.com/product/security-gateway">Security Gateway</a> R70 Virtual Edition (or R70 VE for short). The main difference between the R65 VE we ship today and R70 VE, aside from the new Software Blades architecture, is the level of integration with the VMware environment. Specifically, we use the <a target="_blank" href="http://www.vmware.com/company/news/releases/vmsafe_vmworld.html">VMsafe APIs</a> provided by VMware, which give us a whole new level of visibility into the networking that goes on inside a <a target="_blank" href="http://www.vmware.com/products/vi/esx/">VMware ESX</a> server.</p>
+<p>If you wanted to see what was going through every port in a physical switch, you might have some trouble either setting up mirror ports for everything or network taps. In VMware with the new VMsafe APIs, applications like R70 VE can see <em>everything</em> going through the virtual switch and can block it as appropriate.</p>
+<p>In our demo, we show a couple of virtual machines hooked up to a virtual switch along with a separate VM for R70 VE. One of the VMs is compromised and starts "attacking" the other. These VMs and the R70 VE VM are on the same logical subnet, hooked to the same virtual switch. R70 VE is able to successfully block the attacking traffic using the <a target="_blank" href="http://en.wikipedia.org/wiki/Intrusion-prevention_system">IPS</a> blade.</p>
+<p>The good news for the firewall administrator is that this virtual gateway is managed with the same set of tools you use today: SmartCenter and all of the SmartConsole apps. It feels just like a gateway on a physical appliance, except it is running inside a virtual machine.</p>
+<p>R70 VE is not shipping today. The code shown at VMworld is of alpha quality. We are expecting a Q4 2009 release timeframe, but that is not final and is subject to change.If you're looking for more details, let me know and I'll hook you up.</p>

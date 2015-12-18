@@ -1,0 +1,46 @@
+---
+layout: post
+title: WiFi and Windows XP Tips
+date: 2007-02-13 23:49:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- mac
+- wifi
+- windows
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>Being that I am in the Bay Area, and my Aunt and her kids live down in the Santa Cruz area, every once in a while I feel the need to go down there and see them. This time, I even gave them more than a few hours of notice that I was coming so I could see at least one of my cousins, whom complains she never gets to see me.</p>
+<p>Anyway, after the usual discussions about my mom, the rest of the family, politics and religion, the conversation drifted into computers. Apparently, my uncle had bought a Linksys WRT54GS and was trying to use his laptop in the living room. He had bought one of those WiFi repeaters that Linksys sells because he was having signal issues. He was worried, rightfully so, about not having any of this secured.</p>
+<p>The Linksys WiFi repeater is particularly difficult to configure, since it has no Ethernet port. It's even <em>worse</em> when you are trying to use it with WPA. I eventually gave up using it myself. I found that proper location of the WiFi router, hi-gain antennas, and third-party firmware such as DD-WRT resolved the vast majority of my issues. The main reason for the third party firmware: the ability to adjust your transmit power to at least 50mW. Unfortunately, he has one of the newer WRT54GS units. You know, the ones Linksys <em>neutered</em> so that it is difficult to flash third party firmware on them. Still, antennas and orientation will work wonders.</p>
+<p>Later on, I had pulled out my MacBook to show some photos and videos I took with my various Nokia handsets. They really liked the FrontRow interface of the Mac. After we finished with that, I had <a target="_blank" href="http://www.istumbler.net/">iStumbler</a> running and picked up a half dozen WiFi access points--most of them on channel 6. Of course their access point was also running on channel 6. I suggested changing to either channel 1 or channel 11. Of course, I suggested killing that WiFi repeater because even <em>I</em> have a problem configuring that thing. I can't imagine my uncle, who is a semi-computer literate person in his 60s, trying to accomplish this.</p>
+<p>Then we got onto the whole spyware/virus/cookie thing. Like most people, they are running on their computers <em>as administrator</em>. That's dangerous, even for someone like me who <em>knows what they are doing</em>. It is not a very good idea for most people to operate in that fashion. Of course, Microsoft and application vendors <em>make it difficult</em> to do properly. You should also use Firefox instead of Internet Explorer and/or configure Internet Explorer with safer default settings to reduce your exposure risk.</p>
+<p>Because the above was a lot of information, I am going to summarize in bullet form with links to tools and articles.</p>
+<p><strong>WiFi Hints</strong></p>
+<ul>
+<li>Don't buy a repeater. They are almost <em>never</em> easy to configure.</li>
+<li>Buy a higher-gain antenna set for your router. If your router doesn't have detachable antennas, get a router that does.</li>
+<li>If you have a Linksys WiFi router, vertically mount the unit on the wall so the antennas and the rest of the unit is a flat plane. This maximizes the router's ability to broadcast. You may need a Linksys SM-1 mounting bracket to accomplish this. I bought them on eBay, but you can get them on Amazon.com and other places.</li>
+<li>Check what channel your neighors are using. Pick a less-crowded channel. Channel 6 is the default for most routers. Use a tool like <a target="_blank" href="http://www.netstumbler.com/downloads/">NetStumbler</a> (PC) or <a target="_blank" href="http://www.istumbler.net/">iStumbler</a> (Mac) to find out what WiFis are in use in your neighborhood. Look for routers in channels 1, 6, and 11. Choose one of these three with the least amount of routers.</li>
+<li>If you're willing to spend money on new cards <em>and</em> new routers, go get one of the Draft-N WiFi routers and cards (from the same manufacturer). Your range should improve.</li>
+<li>Configure your router to use WPA. Use a totally random, long, secure passphrase from <a target="_blank" href="http://grc.com/passwords">grc.com/passwords</a>.</li>
+</ul>
+<p><strong>Protecting Your Windows XP Box</strong></p>
+<ul>
+<li>If you haven't already, make sure Service Pack 2 is loaded.</li>
+<li>
+<a target="_blank" href="http://support.microsoft.com/kb/283673">Enable the firewall</a> if it's not already.</li>
+<li>Use <a target="_blank" href="http://www.getfirefox.com/">Firefox</a>!</li>
+<li>If you <em>must</em> use Internet Explorer, set your default security settings in Internet Explorer to HIGH. This can be done under Tools &gt; Internet Options &gt; Privacy tab. This will prevent sites you don't explicitly trust from running ActiveX controls, Javascript, or anything like that. You can then click on the Sites button to add the sites you trust. Yes, this takes a little due-diligence on your part, but you really block against unwanted things entering your platform via Internet Explorer.</li>
+<li>Use Limited user accounts on Windows XP. Each person that uses your PC should have an account that is a Limited user. This should stop <em>most</em> malware from doing anything <em>to</em> the computer aside from possibly deleting user data. It also prevents <em>stupid user mistakes</em> as well. They can still run programs, of course, but they cannot be permanently installed by a Limited user. One<em> </em>administrator account should exist on the computer, but nobody should use it on a regular basis except to install new software or browser plugins. User accounts can be edited by going to Start &gt; Control Panel, then click on User Accounts, and then either create new accounts as appropriate, or editing the existing accounts and clicking on "Change my account type" and setting the type to Limited.</li>
+</ul>
+<p>Of course, after my uncle and my cousin saw how sexy my Mac was, how you could also run Windows on it, and how easy it was to use, they were thinking maybe they'd buy a Mac next. Considering the price isn't all that different nowadays, it's worth it to buy a compuer capable of running <em>two </em>operating systems (MacOS and Windows) instead of just one (Windows).</p>

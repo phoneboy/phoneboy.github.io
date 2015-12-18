@@ -1,0 +1,39 @@
+---
+layout: post
+title: Cross-Site Request Forgery And You
+date: 2007-06-30 01:10:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>What is a Cross-Site Request Forgery? Quoting from the <a target="_blank" href="http://www.cgisecurity.com/articles/csrf-faq.shtml">Cross-Site Request Forgery FAQ</a>:</p>
+<blockquote><p>Cross Site Request Forgery (also known as XSRF, CSRF, and Cross Site Reference Forgery) works by exploiting the trust that a site has for the user. Site tasks are usually linked to specific urls (Example: http://site/stocks?buy=100&amp;stock=ebay) allowing specific actions to be performed when requested. If a user is logged into the site and an attacker tricks their browser into making a request to one of these task urls, then the task is performed and logged as the logged in user. Typically an attacker will embed malicious HTML or JavaScript code into an email or website to request a specific 'task url' which executes without the users knowledge, either directly or by utilizing a Cross-site Scripting Flaw. Injection via light markup languages such as BBCode is also entirely possible. These sorts of attacks are fairly difficult to detect potentially leaving a user debating with the website/company as to whether or not the stocks bought the day before was initiated by the user after the price plummeted.</p>
+</blockquote>
+<p>The bottom line: if you visit a malicious web site and you are authenticated with a "trusted" web site, the malicious web site can essentially impersonate you, assuming you are already logged into the site or you are using an easily guessable password, for example the default password on your Linksys router. How does this happen? This attack stems from the fact that within a typical web browser program, any web session can easily access any other session or simply spawn a new one. For example, if in Firefox you were browsing a malicious site and also maintaining your MySpace page, the malicious site could perform actions on MySpace <em>as if you did them.</em></p>
+<p>Some more examples of things that Cross-Site Request Forgery can accomplish:</p>
+<ul>
+<li>Reconfigure your Linksys router to permit an attacker to reach your PC.</li>
+<li>Submit a bid on your behalf for an item on eBay.</li>
+<li>Post a message "as you" on a particular forum site, your MySpace page, or whatever.</li>
+</ul>
+<p>The attacks go beyond just web sites, as I alluded to with the Linksys router comment. Just about <em>every</em> piece of residential or commercial networking gear has some kind of web interface associated with it. Accessing a carefully crafted malicious website in the right environment could lead to opening your entire network up to hackers. And they are coming in through a "trusted" service: HTTP.</p>
+<p>There are steps web sites and web interfaces for networking equipment can do. Most of them relate to correcting cross-site scripting (XSS) issues in the web interface. The web browser may have its own XSS issues, further exacerbating the problem. While it's good to fix these issues, there's no promise those issues won't show up again later. There are a few other countermeasures, but these countermeasures can likely be defeated by other exploits. The end result is that, at least with the current browser architecture, there is little that can be done to eliminate these kinds of attacks.</p>
+<p>There are several things you can do to reduce the risk from these attacks affecting you. They include, but are not limited to:</p>
+<ul>
+<li>Not caching your login passwords in the browser.</li>
+<li>If possible, set a 5 minute (or thereabouts) inactivity timer on your sensitive web sessions.</li>
+<li>Running the web interface for your device on a non-standard port.</li>
+<li>Explicitly logging out of the session on the web page in question.</li>
+</ul>
+<p>The safest option is to use a completely different web browser program to administer your sensitive web pages and site than you use to browse the Internet. For example, if you use Internet Explorer to browse the Internet, use Firefox to administer your routers. Do not use Internet Explorer along with other Internet Explorer-based browsers as they may all share the same session information.</p>
+<p>If you're a Firefox user, another thing you can download is a copy of <a target="_blank" href="http://www.noscript.net/">NoScript</a>.  NoScript disabled JavaScript for web sites you don't explicitly trust. In addition, NoScript has a number of XSS-related checks in it to thwart XSS-related attacks on well-known websites.</p>

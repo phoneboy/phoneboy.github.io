@@ -1,0 +1,73 @@
+---
+layout: post
+title: A More Balanced View of Check Point ClusterXL Load Sharing
+date: 2014-09-01 17:47:15.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>A blog post written by Greg Ferro, a.k.a. <a href="http://etherealmind.com" target="_blank" title="Link: http://etherealmind.com">EtherealMind</a>, had come to my attention on <a href="http://etherealmind.com/tech-notes-checkpoint-firewall-cluster-xl-2014/" target="_blank">a review of </a><a href="http://etherealmind.com/tech-notes-checkpoint-firewall-cluster-xl-2014/" target="_blank" title="Link: http://etherealmind.com/tech-notes-checkpoint-firewall-cluster-xl-2014/">ClusterXL in Check Point R77 based on the documentation</a>. I'm familiar with Ferro from the <a href="http://packetpushers.net" target="_blank">Packet Pushers Podcast</a> where he and Ethan Banks talk nerdy about networking. They occasionally dip into the security arena and when Check Point does come up, it's not in a positive light.</p>
+<p>When I actually read Ferro's post about ClusterXL, I was not surprised that the end result was a negative review: not only of ClusterXL but of Check Point itself. What surprised me was how incomplete the review was, technically speaking, because I know how nerdy he can get.</p>
+<p>Ferro only used one document for his paper review: the <a href="https://sc1.checkpoint.com/documents/R77/CP_R77_ClusterXL_WebAdminGuide/html_frameset.htm" target="_blank" title="Link: https://sc1.checkpoint.com/documents/R77/CP_R77_ClusterXL_WebAdminGuide/html_frameset.htm">Check Point R77 Versions ClusterXL Admin Guide</a> dated 28 July 2014. He could have easily asked the customer he supposedly did this review for to obtain additional documentation, such as the ClusterXL Advanced Technical Reference Guide in <a href="https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&amp;solutionid=sk93306" target="_blank">sk93306</a>. Because he didn't have direct access to said documentation as an independent consultant, he chose not to use it.</p>
+<h2>What is ClusterXL anyway?</h2>
+<p>Even with the documentation Ferro chose to use, the more I read his <a href="http://etherealmind.com/tech-notes-checkpoint-firewall-cluster-xl-2014/" target="_blank" title="Link: http://etherealmind.com/tech-notes-checkpoint-firewall-cluster-xl-2014/">Tech Notes Check Point Firewall ClusterXL in 2014</a> piece, the more I conclude his review was not very thorough. Clearly he read <i>some</i> of the documentation as there are quotes from it throughout the piece, but it's obvious he missed the part that defined what ClusterXL actually is:</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>ClusterXL is a Check Point software-based cluster solution for Security Gateway redundancy and Load Sharing. A ClusterXL Security Cluster contains identical Check Point Security Gateways.</p>
+<ul>
+<li>A High Availability Security Cluster ensures Security Gateway and VPN connection redundancy by providing transparent failover to a backup Security Gateway in the event of failure.</li>
+<li>A Load Sharing Security Cluster provides reliability and also increases performance, as all members are active</li>
+</ul>
+</blockquote>
+<p>Ferro's definition of ClusterXL?</p>
+<blockquote><p>There seems to be two modes of active/active High Availability for CheckPoint Firewall one. Both of which are called ClusterXL.</p></blockquote>
+<p>Ferro then talks about the requirements for ClusterXL, which he gets mostly right: sync is a Layer 2 protocol, ClusterXL requires appropriate licenses (which every current Check Point appliance has, as do many current software-only firewall SKUs), and you should use NTP between members. Actually NTP is a good idea for reasons other than state sync (e.g. VPNs and SSL).</p>
+<h2>State Synchronization</h2>
+<p>Then Ferro comments on State Synchronization.</p>
+<blockquote><ul>
+<li>by defaults all connection state is synchronised across the cluster.</li>
+<li>you can decide not to synchronise. Why ? Does this imply a performance issue in the devices, network, speed or other issues ? What would I not sync all state ?</li>
+<li>“Synchronization incurs a performance cost” – implies that CheckPoint performance remains a problem for “many customers</li>
+</ul>
+</blockquote>
+<p>For the vast majority of Check Point customers, state sync does not have performance issues. Where issues have been observed is in environments where the connection rate is far higher than the throughput would suggest. You can reduce the load by disabling sync for services with connections that are transient in nature (e.g. DNS, short-lived HTTP connections) and can be done easily in SmartDashboard.</p>
+<p>But that's not all he has to say about State Synchronization:</p>
+<blockquote><ul>
+<li>Synchronisation Network requires elevated security profile, suggests CCP is insecure protocol, isolated network.</li>
+<li>Recommends using an isolated switch – this is stupidly impractical who the heck wants to waste money and power on a dedicated switch in the DMZ.</li>
+<li>Using a crossover cable is equally stupid and impractical. What are they thinking ?</li>
+<li>Appears that sync is ONLY supported on the lowest VLAN ID on an interface.</li>
+</ul>
+</blockquote>
+<p>The Synchronization Network requires an elevated security profile: yes, this is stated in the documentation and is no different than every other major vendor. A dedicated switch or a crossover cable allows this elevated security profile to be maintained better than a dedicated VLAN, which by the way, if you want to use a dedicated VLAN, yes, this is supported; it's a common configuration in customer networks. As to whether a dedicated switch or crossover cable is "stupidly impractical," customers have asked for support for all of these options, which is why they are tested and supported options (and thus listed in the documentation as such).</p>
+<p>Ferro's next complaint? You can't use more than one synchronization interface. This actually used to be a supported configuration once upon a time but in recent versions, the supported approach is to let the operating system handle interface redundancy via bonded interfaces (i.e. with LACP). I asked in the comments of the post why he felt using LACP was an inferior solution to multiple independent synchronization interfaces. No response.</p>
+<h2>ClusterXL Load Sharing</h2>
+<p>Ferro never once explicitly mentions the sort of configuration he was using as the basis for his paper review of ClusterXL. Based on the fact he only briefly mentions High Availability (or Active/Passive, as he said) and spends the majority of his time talking about Load Sharing (Active/Active), I can only assume that is the configuration he's most interested in, ignoring the fact that High Availability configurations are the far more common customer configuration.</p>
+<p>Of the two ClusterXL modes that relate to Load Sharing, Ferro only talks about one: Load Sharing Multicast. This mode, according to Ferro, "should be avoided at all costs" because it involves implementing workarounds that are, in his words, "complex and hard to maintain/operate." These workarounds, static multicast mappings and/or disabling IGMP, are necessary because some networking equipment out there does not properly support RFCs or has issues with frame replication (needed for Multicast). </p>
+<p>ClusterXL has a mode that requires none of these workarounds: Load Sharing Unicast mode. This mode was only mentioned once, but no analysis of this mode was offered by Ferro.</p>
+<p>Ferro's opinion about VPN and Load Sharing is that "there are many conditional statements about VPN connections" and "would have little confidence in running Load Sharing Multicast Mode and running VPN services on the same physical unit." I couldn't find the conditional statements he was referring to, but what I did find was one particular statement in relation to third party peers and load sharing (repeated in a couple of different ways):</p>
+<blockquote><p>The third-party peers, lacking the ability to store more than one set of SAs, cannot negotiate a VPN tunnel with multiple cluster members, and therefore the cluster member cannot complete the routing transaction.</p></blockquote>
+<p>The problem isn't Check Point, per-se, the problem is with <i>interoperating with non-Check Point devices</i>. The workaround: using Sticky Decision Function, which is listed in the documentation where this "conditional" statement is listed. This, along with the other so-called conditional statements he refers to are curiously absent from his paper review.</p>
+<h2>Performance and Cost</h2>
+<p>Ferro writes in several digs at Check Point's allegedly "punishingly expensive" products. In most of the competitive situations I've been engaged with during my tenure at Check Point, pricing compared to the competition is rarely a factor. That said, I have seen numerous situations where competitors have purposely specified lower-end (and thus cheaper) solutions that, in reality, will not meet the customer's stated requirements while maintaining the same security posture.</p>
+<p>Ferro also states "forwarding performance is and price/performance is very poor" which is provably false. Independent third parties have verified Check Point's performance and pricing and have found Check Point in-line with the competition. It's also something being validated internally at Check Point on an ongoing basis.</p>
+<p>Ferro is correct that performance decreases when additional security features are enabled, however this phenomenon is by no means unique to Check Point products. The expected performance for a given Check Point appliance is listed right on the data sheet along with the unrealistic "lab" numbers every networking vendor since the dawn of time has included on their datasheets. Unlike Check Point's competitors, the "real world" performance is evaluated with real-world traffic flows, multiple software blades (security functions), a real-world rulebase, and logging/NAT enabled. Your local Check Point account team can provide more refined appliance recommendations based on your specific requirements.</p>
+<h2>In Conclusion</h2>
+<p>As noted before, it's not really clear what use cases Ferro was evaluating ClusterXL against. Even his conclusion is non-specific about this:</p>
+<blockquote><p>Check Point doesn’t have strong solution for clustering and the weak documentation suggests that it’s not fit for critical use cases.</p></blockquote>
+<p>Perhaps Ferro does have a use case that ClusterXL would not be a good fit for. I'd love to know what those "critical use cases" are in more detail so his conclusion could be evaluated more thoroughly. </p>
+<p>Ferro's conclusion is based on an incomplete review of the available information. Only one document was reviewed when others exist, and I question how thoroughly even the one document was reviewed. Only one of the load sharing modes of ClusterXL was reviewed in any detail and he completely ignores the other mode as well as high availability configurations. Ferro also ignores the fact that practically all of Check Point's 100,000+ customers use ClusterXL successfully in their networks, which includes 100% of the Fortune 100 and Global 100 customers across many different industry verticals.</p>
+<p>In short: Ferro's review of ClusterXL is incomplete and his conclusion is not supported by the facts.</p>
+<p><b>Disclaimer</b>: I work for Check Point Software Technologies. That said, the above are my own thoughts.</p>
+<p></p>

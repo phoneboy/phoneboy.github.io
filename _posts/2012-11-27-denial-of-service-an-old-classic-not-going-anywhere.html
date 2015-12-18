@@ -1,0 +1,41 @@
+---
+layout: post
+title: 'Denial of Service: An Old Classic Not Going Anywhere'
+date: 2012-11-27 09:48:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- Check Point
+- ddos
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>The implementation details will vary depending on the attack target and the request type, but the basic concept of a denial of service is to overwhelm a target with a seemingly legitimate series of requests so that real requests are ignored and not processed. If the attack is launched from multiple points on the network, it is referred to as a distributed denial of service attack (a.k.a. DDoS).</p>
+<p>I remember when I first started hearing about denial of service issues more than 10 years ago. I even played with a few tools to generate them on my own--in my own network, of course. Back then, defenses for this sort of thing simply didn't exist. Aiming a tool at a helpless server protected by an even more helpless firewall was a great way to wreak havoc.</p>
+<p>In general, there are two ways to create a Denial of Service condition:</p>
+<ul>
+<li>Cause the relevant service to crash. This is actually pretty difficult to do in a simple fashion given the resiliency of most public-facing services, though for lesser-used services, it can happen.</li>
+<li>Resource exhaustion, where some resource needed to provide the service (bandwidth, buffers, etc) is depleted in a way that causes the service to not respond to legitimate requests.</li>
+</ul>
+<p>Over the years, every part of the service stack has gotten more resilient against the most basic form of these attacks. For example, a simple SYN flood won't take down most web servers these days as web servers are smart enough not to allocate resources to a connection until the three-way handshake completes. That said, if you can get a few million of your closest friends to run <a target="_blank" href="http://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon">Low Orbit Ion Cannon</a> at a server, or visit a particular webpage, you can still take down a target.</p>
+<p>To give you a real-world example of this, I'll talk briefly about a recent denial of service someone brought to Check Point's attention via a <a target="_blank" href="http://pastebin.com/xdy5WT8c">Pastebin posting</a>. The attack, ironically, was not all that different from the first SYN floods I played with more than a decade ago.</p>
+<p>According to the report on Pastebin, the security researcher was able to essentially cause a Check Point Security Gateway to stop processing packets by sending ~120k packets per second. That's easy to generate inside a VMware environment, or even on an isolated network segment. Over an Internet link? Depends on the size of the pipe.</p>
+<p>Regardless of how realistic that particular incoming packet rate may be in a given environment, what happens when the gateway sees that much traffic? In many cases, it simply runs out of memory, causing traffic to be dropped. It also runs out of processor capacity to forward said traffic.</p>
+<p>Since the only way to truly stop a denial of service attack is to disconnect from the Internet, your best hope is that the various components are optimally configured to operate in potential denial of service conditions. <a target="_blank" href="https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&amp;solutionid=sk86721">Check Point's official response to this issue</a> mentions four specific configuration changes that can be made to their security gateways:</p>
+<ol>
+<li>Implementing the IPS protection "SYN Attack" feature in SYN cookie mode, which will reduce the memory footprint caused by these bogus connection attempts.</li>
+<li>A hotfix for SPLAT/GAiA systems that, along other things, optimizes how the SYN+ACK packets that come back from the server are processed (IPSO does not require this).</li>
+<li>Where applicable, use multiqueue to increase the number of processors that can handle traffic on a given interface.</li>
+<li>Increasing the receive buffers on the interface.</li>
+</ol>
+<div>These settings have proven to be effective at mitigating a potentially large SYN flood. That said, there's only so much you can do. Your Internet link is still a potential bottleneck. Your Security Gateways, even optimally configured, can only process so much traffic.</div>
+<div></div>
+<div>Unfortunately, there is no silver-bullet solution to this problem other than bigger and better servers--or security gateways. This means that denial of service is something we're going to have to battle with for a long time.</div>

@@ -1,0 +1,24 @@
+---
+layout: post
+title: Quicktime-Java Attack Vector Reported
+date: 2007-04-25 17:56:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>Russell Shaw <a target="_blank" href="http://blogs.zdnet.com/ip-telephony/?p=1567">reports</a> that there is now a new "attack vector" utilizing Java and Quicktime on a web page. This is basically the security bug that was recently found against MacOS, but it's actually <em>not</em> against MacOS per-se, but rather Quicktime. That means not only is MacOS vulnerable, but Windows is potentially vulnerable too.</p>
+<p>From <a target="_blank" href="http://www.nist.org/news.php?extend.226">nist.org article</a>:</p>
+<blockquote><p>Currently Safari and Firefox are confirmed vectors on the MacIntel OSX platform. Currently it is known that Windows Quicktime is vulnerable as well. What is not known is to what degree. If the attack is a buffer overflow an actual "exploiting the box" type attack may be OS specific. In other words Quicktime under Windows may simply crash or hang the computer if the same exploit code is used. Converting a buffer overflow in to a full fledged exploit takes time and is not always possible. But they did it on the OSX platform so it is entirely possible that someone can do it on the Windows platform as well. However, if the exploit simply takes advantage of a function built-in to Quicktime than the current exploit may work on both platforms.</p>
+</blockquote>
+<p>The mitigation for this issue?  Disable Java, Uninstall Quicktime, or if you're a Firefox user, use the <a target="_blank" href="http://noscript.net/">NoScript extension</a> and ensure Java is disabled on untrusted sites. Not getting rid of Java or Quicktime, but I sure use NoScript. Yes, it's a pain, but these kinds of issues are precisely why I am willing to go through the trouble of running it.</p>
+<p>Presumably, Apple is now aware of this issue and is working quickly to patch this issue both in Windows and MacOS.</p>

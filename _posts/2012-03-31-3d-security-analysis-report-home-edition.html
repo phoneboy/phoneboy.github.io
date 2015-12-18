@@ -1,0 +1,57 @@
+---
+layout: post
+title: '3D Security Analysis Report: Home Edition'
+date: 2012-03-31 18:04:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- Check Point
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>If you're a (potential) Check Point customer, you've likely heard of our <a target="_blank" href="http://www.checkpoint.com/campaigns/3d-analysis-tool/index.html">3D Security Analysis Report</a>. The idea is to take real traffic from your network off a span port, and run it through our Security Gateway to see what is going on in your network. While it is a sales tool, it's certainly an important one as it will instantly demonstrate the value of Check Point's solutions based on your own traffic.</p>
+<p>Both for fun and to test an upcoming version of our Security Gateway software, I decided to run a 3D Security report against my own network. I took an existing Check Point appliance, loaded up with code, and plugged it into a Mirror Port on my switch. I let it it run for a day or so to collect traffic. In an active business network, you can let it run for as little as an hour or two and see results.</p>
+<p>You can see what a full 3D Security report looks like by <a target="_blank" href="http://supportcontent.checkpoint.com/documentation_download?ID=13521" title="Link: http://supportcontent.checkpoint.com/documentation_download?ID=13521">downloading a sample</a>. I won't share my report, but I will share bits and pieces of it so you can get a sense for the kinds of things it will show you. Specifically, I used IPS, App Control, and URL Filtering as part of my report, though it is possible to include DLP and (soon) Antibot.</p>
+<div class="posthaven-gallery" id="posthaven_gallery[567385]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/Screen-Shot-2012-03-31-at-5.24.48-PM-300x85.png" />
+        </p>
+</p></div></p>
+<p>There were a couple of surprises here. I thought I had removed Dropbox and Hamachi from all my computers. Apparently not. This will need to get corrected. LogMeIn is in use in my network, so I'm not worried about that. The eMule thing will have to be investigated since I'm pretty sure I'm not running that in my network (my kids aren't either).</p>
+<p>In case you're not sure what these apps are, the report provides you with a nice description of all the apps:</p>
+<div class="posthaven-gallery" id="posthaven_gallery[567387]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/Screen-Shot-2012-03-31-at-5.42.58-PM-300x284.png" />
+        </p>
+</p></div></p>
+<p>Meanwhile, another thing the 3D report tells you is how much bandwidth the various apps are using:</p>
+<div class="posthaven-gallery" id="posthaven_gallery[567386]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/Screen-Shot-2012-03-31-at-5.37.28-PM-300x184.png" />
+        </p>
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/Screen-Shot-2012-03-31-at-5.37.28-PM-300x184.png" />
+        </p>
+</p></div></p>
+<p>I've used quite a bit of bandwidth over the last 24 hours or so! A third of it is SSL traffic, so I can't see inside it all (though I could if I deployed my gateway inline and added my CA certificate to my family PCs). Note not all of this is Internet-bound traffic, but still 2 GB in 24 hours is quite a lot, especially when you consider Comcast's 250GB cap!</p>
+<p>The report provides a breakdown as well (note this is a partial list):</p>
+<div class="posthaven-gallery" id="posthaven_gallery[567388]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/Screen-Shot-2012-03-31-at-5.49.37-PM-300x194.png" />
+        </p>
+</p></div></p>
+<p>Finally, while there wasn't much going on from an IPS point of view, the blade did detect a couple of anomalies, which are provided along with the relevant remediation:</p>
+<div class="posthaven-gallery" id="posthaven_gallery[567389]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/Screen-Shot-2012-03-31-at-5.54.47-PM-300x171.png" />
+        </p>
+</p></div></p>
+<p>While the customer response to these reports has been generally positive, they are also end up being quite an eye-opener as you see things you never knew were going on. Even I am surprised at what I'm seeing in my own home network! Imagine what you'll find in your network.</p>

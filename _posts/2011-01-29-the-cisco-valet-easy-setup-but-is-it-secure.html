@@ -1,0 +1,74 @@
+---
+layout: post
+title: 'The Cisco Valet: Easy Setup, but is it Secure?'
+date: 2011-01-29 11:46:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- cisco
+- wifi
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>A PR firm representing Cisco asked me if I wanted to review the <a target="_blank" href="http://home.cisco.com/en-us/wireless/valet">Cisco Valet</a>, which is a line of "surprisingly simply home wireless" devices that, I have to say, does what it says on the tin. It is by far the easiest setup process I've seen.</p>
+<p>The first thing I noticed was the packaging. A complete lack of technical jargon or marketing about how this router compares to the others they sell. There most technical things on the box are in small print and are just basically a list of system requirements and a warning that, due to a number of factors, your wireless speeds and range may vary.</p>
+<p>When I did the initial setup, I used my Mac--usually a stumbling block for these so-called "easy setup" programs. The Easy Set Up key is little more than a Flash drive that contains some documentation and the Cisco Connect application. Launching the Cisco Connect gives you a screen that tells you to do do three things:</p>
+<ul>
+<li>Plug the router into your Internet connection</li>
+<li>Plug the router into your power</li>
+<li>Click next</li>
+</ul>
+<p>In less than the five minutes it tells you it could take, I had a screen that told me my router was set up and I was connected to it. Sweet! You could, of course, do some additional configuration of the router. A very simple interface is presented for doing this (click image for larger view):</p>
+<div class="posthaven-gallery" id="posthaven_gallery[567383]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/Screen-shot-2011-01-28-at-2.26.05-PM-300x207.png" />
+        </p>
+</p></div></p>
+<p>The add device option gives you the settings you need to configure a device. Obviously, it's going to vary by device manufacturer. Once it has detected the device has connected, you can then "name" the device for later. Handy!</p>
+<p>I didn't mess with the parental controls--I almost never find them granular enough for my tastes. However, it appears they do some category-based URL filtering and allow you to blacklist sites. The problem is the restrictions are per-host, meaning you have to select the individual hosts that you wish to restrict. You also can't whitelist sites or create a default URL filtering policy that applies to all connected hosts. That said, it's more functionality than I've seen in a typical consumer router.</p>
+<p>The guest access feature is quite handy as well. Cisco Valet creates a second (open) SSID that your guests can use to access the Internet. It is segmented off from your regular wireless network and presents a captive portal to your guests, whom must enter a password before they are allowed access to the Internet:</p>
+<p>Of course, you can disable this feature as well.</p>
+<p>When the router is first configured, the SSID is set to a random adjective-noun word combination and the password is set to a 10 character random string. In the Valet Settings, you can change these things to something. You can also save this to the Easy Setup Key (or create a new one using any standard USB thumb drive) that will allow you easily configure other Mac or Windows computers in your house with the correct wireless settings.</p>
+<div class="posthaven-gallery" id="posthaven_gallery[567384]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/Screen-shot-2011-01-28-at-2.26.25-PM-300x209.png" />
+        </p>
+</p></div></p>
+<p>And, of course, there's the Advanced Settings, which fires up a web browser with a typical Linksys-style web interface for configuring the router (though it is entirely Cisco-branded now). This is where the geek settings are, of course, and are, "advanced." I'm sure given the relatively ease through which computers can be added and the basic settings can be configured, there will rarely be a reason for most people to ever visit the advanced settings.</p>
+<p><strong>But Is It Secure?</strong></p>
+<p>Most reviews stop here. They are quite happy that someone has finally come up with a wireless router that almost anyone with even rudimentary computer knowledge could configure and use. That is a feat worthy of praise, no doubt.</p>
+<p>I am not most people. I wonder, in the back of my mind, does Cisco make this device easy to use, yet actually make it secure? The answer is not surprising--to me at least.</p>
+<p>First, it's probably worth pointing out that I work for a competitor to Cisco: <a target="_blank" href="http://www.checkpoint.com/">Check Point Software Technologies</a>. We don't compete in the consumer market, really, but we certainly in the enterprise network security market. That doesn't affect my opinions here, but I figure I should disclose that since some might consider it a conflict of interest.</p>
+<p>Prior to proceeding with the setup wizard, I saw what the router was broadcasting by default--a WPA-protected access point named CiscoXXXXX (where XXXXX corresponded to the last 5 digits of the device serial number). My guess is the router is preconfigured with some default WPA password that the Cisco Connect software then changes to something else, which it then tells you after the setup is complete.</p>
+<p>Cisco gets props on a number of things security related:</p>
+<ul>
+<li>Choosing a random network name (SSID)--most manufacturers use a known default</li>
+<li>Configuring WPA as a default</li>
+<li>Choosing a random password that contains numbers, upper and lower case letters, and special symbols</li>
+</ul>
+<p>All three of these things are good. By choosing a random SSID and a random password, it makes it harder for someone to brute-force (i.e. guess every possible password) access to the wireless access point.</p>
+<p>While these are far better than what I've seen from others, it's, unfortunately, not enough. To be relatively safe from a brute-force attempt, the passphrase needs to be at least <em><strong>20</strong></em> characters--random ones at that. Also, it defaults to WPA/WPA2 mixed mode, which allows you to use the TKIP, which may be needed for some legacy hardware, is not the most secure. You can change to WPA2, which only supports AES. It would be nice if you could change the rekey interval, but I don't see a way to do that from the advanced settings.</p>
+<p>There are a couple of other dangerous settings enabled by default:</p>
+<ul>
+<li>Universal Plug and Play is enabled by default (which, when paired with malware, could easily make your computers more vulnerable to attacks)</li>
+<li>WMM Support (in the QoS section) which, when enabled, makes your network a little more susceptible to hacking when WPA (not WPA2) is enabled.</li>
+</ul>
+<p><strong>The Nintendo DS Factor</strong></p>
+<p>One rather common WiFi-enabled device in any household with children is the Nintendo DS. This device does not support WPA at all. Even the newer DSi, which does support WPA, doesn't support it for DS games. This means, if you want your kids to be able to use the WiFi features of their DS games, they won't be able to use them unless you use WEP for your wireless security, which is not recommended.</p>
+<p>This is, in my opinion, one big disappointment with the Cisco Valet. There is no way to allow a Nintendo DS to use the Guest wireless without using WEP. They could very easily allow the whitelisting of certain MAC addresses to be allowed to access the Guest wireless (which is open, unencrypted, and will work with the DS) without requiring web-based captive portal authentication.</p>
+<p><strong>Other Minor Gripes</strong></p>
+<p>The Cisco Connect software allows you to configure items that cannot be configured with the Advanced Settings interface, namely the Guest wireless access. I would like to be able to change the default IP range used for the Guest wireless and, possibly, whitelist certain machines as I described above.</p>
+<p>By default, the router administration password the same as the WPA password. This does make it easier for end users, but I think you should be able to set them independently in the Cisco Connect software.</p>
+<p>I also do not see a way through the Cisco Connect software to upgrade the firmware for my router. This is a necessary, sometimes daunting task, especially given the number of hardware variations that can exist even with the same model. There's no reason Cisco couldn't have made this process as simple as they've made everything else--push a button and it takes care of the rest.</p>
+<p>And, of, course, my security gripes above. While they went a lot farther than I've seen other manufacturers go, they could have gone just a little farther in choosing more secure defaults, possibly with an optional "security settings" page so you don't have to hunt in the Advanced Settings interface to make the wireless connectivity more secure.</p>
+<p>All in all, though, I am very impressed with the product. I could easily see myself recommending this product to my non-technical friends and family as a dirt simple way to share their Internet connection and create their own personal wireless hotspot.</p>
+<p>The only people I cannot recommend this product to are Linux users who lack a Windows or Mac machine on which to run the Cisco Connect software. Since the initial setup of this router cannot happen without the Cisco Connect software, which does not run on Linux, your "out of the box" experience will be less than fulfilling. You only need the software the first time, of course, but you might be better off with a <a target="_blank" href="http://homesupport.cisco.com/en-us/wireless/linksys">Linksys-branded router</a>.</p>
+<p>So yes, Cisco did it. They made WiFi easy for normal people to set up. Using the Easy Setup Key, I set up four different Windows computers with my Cisco Valet settings in a matter of minutes. It was drop-dead simple. I wish they spent a little more time on the security side of things, but this is a tough one to do without making things more inconvenient for users. Given what Cisco was aiming for here, I think they nailed it.</p>

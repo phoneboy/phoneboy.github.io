@@ -1,0 +1,28 @@
+---
+layout: post
+title: Speaking IPv6
+date: 2011-01-28 22:03:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- ipv6
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>IPv6 is the next generation of IP--the protocol by which most of our computers, phones, and other related devices talk to each other and to the Internet. Today, everything generally talks using IPv4, which has a 32-bit address space, or roughly 4 billion possible addresses. Both because of the sheer number of devices and the number of "reserved" addresses within the IPv4 space, the number of globally available IP addresses is running out.</p>
+<p>To put it in perspective, as I write this, there is still a few /8 addresses unallocated by the <a target="_blank" href="http://www.iana.org/">IANA</a>, which are distributed to regional registries, which are then responsible for distributing the IPs to ISPs, whom in turn distribute them to you. A /8, in IPv4, is 16,777,216 IP addresses. That seems like a lot of addresses, until you realize that, depending on how those IPs are allocated, the number of usable IPs ends up being a bit less.</p>
+<p>Even so, once IANA runs out of /8s, the individual registries and ISPs still likely have caches of IPv4 addresses. The problem of address space exhaustion probably won't show any acute symptoms immediately, but the lack of IPv4 addresses (and the lack of wide deployment of IPv6) will start causing problems soon, creating pockets of servers that can only be accessed by one protocol or another.</p>
+<p>We've actually been working around the problem of address exhaustion in the IPv4 space for some time now using network address translation. That router you get from your local consumer electronics store has been masquerading all of your computers behind a single, public IP address, providing you both a level of protection and connectivity.</p>
+<p>Enterprises do much the same thing, except their boxes are significantly larger and they also might provide services accessible on the Internet, which means: they need more than one public IP. Also, some enterprises have so many connected systems that they have, quite literally, run out of available private IP addresses (some IPs in the IPv4 space are set aside explicitly for private, non-Internet connected use).</p>
+<p>In any case, the pressure is mounting to switch to IPv6. Given that some of my customers are asking about IPv6, I figured I'd get myself educated. I happen to have access to one of the people who helped define the IPv6 standards in the IETF (he works at Check Point), but there's really no better way to learn about it than to just get it set up.</p>
+<p>Of course, part of the problem right now is that my ISPs at home (Comcast, CenturyLink) are still serving me IPv4 addresses. Fortunately, there are ways of tunneling over IPv4 to the IPv6 networks. One such service is <a target="_blank" href="http://tunnelbroker.net/">TunnelBroker</a>, run by the folks at <a target="_blank" href="http://www.he.net/">Hurricane Electric</a>. They tunnel IPv6 packets inside of IPv4 packets (more specifically using IP Protocol 41, designed for this purpose).</p>
+<p>I had it working on an old Linksys router I had flashed with TomatoUSB and hacked a bit. I had IPv6 flowing through my network and was able to reach a few sites over IPv6. Then I had the realization that I was no longer protected by my router. I was now directly reachable--without a firewall! While I could fix that, I think that's enough experimentation for now.</p>
+<p>I guess the point is: I can make it work today. However, few people are going to want to do what I had to go through to make it work. Every hop in the network has to be IPv6 friendly and IPv6 enabled. For the home user, it's going to have to be as simple as plugging in a router. We'll get there, but it's going to be a bumpy ride for the next few years.</p>

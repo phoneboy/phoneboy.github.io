@@ -1,0 +1,29 @@
+---
+layout: post
+title: Where Does The IPS Go?
+date: 2009-03-08 00:46:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- Check Point
+- ips
+- nokia
+- sourcefire
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>Intrusion Prevention Systems are designed to detect possible attacks that are occurring over the network and act upon them in some way. They are not unlike firewalls, but they tend to approach the problem a bit differently. Whereas your typical network <a target="_blank" href="http://en.wikipedia.org/wiki/Firewall">firewall</a> is a "deny by default" system (i.e. deny all traffic except those which pass certain criteria), an <a target="_blank" href="http://en.wikipedia.org/wiki/Intrusion-prevention_system">IPS</a> tends to be an "allow all by default" system (i.e. allow all traffic except those things that look dangerous). Also, firewalls tend to be routers to serve as a network choke point, whereas the IPS is a "bump in the wire" looking at all traffic passing through. It is usually deployed in-line with the firewall, either on an ingress or egress point.</p>
+<p>Joel Esler, one of the professional services guys for <a target="_blank" href="http://www.sourcefire.com/">Sourcefire</a>, who sell IPS solutions (<a target="_blank" href="http://nokia.com/">Nokia</a>, my employer, is a Sourcefire partner), wrote an interesting blog post <a target="_blank" href="http://www.joelesler.net/finshake/Blog/Entries/2009/3/6_Why_is_your_IDS_outside_your_Firewall.html" title="Link: http://www.joelesler.net/finshake/Blog/Entries/2009/3/6_Why_is_your_IDS_outside_your_Firewall.html">decrying the typical practice of deploying the IPS outside the Internet-facing firewall</a>. His basic message: if your Internet-facing firewall is properly configured and your important machines are properly ensconced behind it, you don't need an IPS on the outside of your firewall. The IPS should be placed <em>inside</em> the firewall.</p>
+<p>While I agree that IPS is needed inside the external firewall, I think IPS has a useful place <em>outside</em> the firewall as well. It is not always feasible to put <em>everything</em> behind a firewall. For example, it may not be possible/feasible to subnet your external network so you can put stuff behind a firewall. You might be using a service that does not play nice with a firewall. Or any number of other technical or political reasons.</p>
+<p>Even if you can manage to get everything behind a <a target="_blank" href="http://en.wikipedia.org/wiki/Stateful_firewall">stateful inspection firewall</a>, what's looking after the firewall? Sure, a properly configured firewall will deflect anything the Internet is likely to throw at it, but <a target="_blank" href="http://www.cpug.org/forums/nokia-ipso/9838-panic-when-securexl-nat-used-malformed-packet-received.html">even a properly configured firewall might be susceptible to a security vulnerability</a>.</p>
+<p>To throw another viewpoint into the mix, perhaps the place to integrate IPS functionality is right in the firewall itself. <a target="_blank" href="http://www.checkpoint.com/">Check Point</a> was clearly starting down this road with SmartDefense in the NG AI release of <a target="_blank" href="http://en.wikipedia.org/wiki/FireWall-1">VPN-1</a>. Now in the R70 release of Check Point's Security Gateway product, we have the <a target="_blank" href="http://www.checkpoint.com/products/softwareblades/intrusion-prevention-system.html">IPS software blade</a>, which is a full-blown IPS.</p>
+<p>The bottom line is that if you're going to use an IPS, you need it everywhere bad stuff could happen--inside or just outside your security parameter. Or on the firewall itself ;)</p>
+<div><a target="_blank" href="http://reblog.zemanta.com/zemified/3bed6388-cba5-459c-81bf-477e8dcbcf05/"><img alt="Reblog this post with Zemanta" src="{{ site.baseurl }}/images/reblog_e.png?x-id=3bed6388-cba5-459c-81bf-477e8dcbcf05" /></a></div>

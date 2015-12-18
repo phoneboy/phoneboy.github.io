@@ -1,0 +1,74 @@
+---
+layout: post
+title: Fun with Check Point SecureClient and Windows Batch Files
+date: 2007-03-22 23:59:00.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- Check Point
+- FireWall-1
+- SecureClient
+- VPN
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>In my past life, I did a heck of a lot with Check Point FireWall-1, now called <a target="_blank" href="http://www.checkpoint.com/products/perimeter.html">VPN-1 Power</a> or something. I don't do much with it now except for use their VPN client to access work, but I do spend some of my day job reviewing stuff <em>other people </em>write about it.</p>
+<p>One of the things I have to do in order to use my work computer on my home network is to actually allow my work computer to access a couple of things at home: namely my Mac sitting right next to it and my network printer. Unfortunately, the combination of the VPN configuration and the firewall software loaded on the laptop make this a challenge, but not difficult.</p>
+<p>One of the things the VPN does is add all these routes to the routing table that essentially <em>override </em>the local routes. Now I can see why an enterprise might want to do that, but if you want to access local resources, then it creates a challenge.</p>
+<p>What I was doing to correct this issue was doing all this by hand: looking at the routing table, removing the offending routes, and adding a few others. In smaller environments, the routes are going to always be to the same default IP. The problem with the implementation I am working with is the nexthop for these routes has a habit of being different each time I connect. I needed to look at the routing table manually before doing the surgery on it. The end result was that I could access the machines I needed.</p>
+<p>Today, I got the bug to automate all this, so I decided to write a Windows Batch file to accomplish all this. Apparently, this was harder than I thought, but I wrote a batch file that:</p>
+<ul>
+<li>Looked at the routing table for a route I know the VPN will set. Fortunately Windows allows you to print only a specific route.</li>
+<li>Parse out all the junk that gets printed in addition to the information I wanted. This parsing turned out to be the most difficult, particularly in getting the information <em>out</em> of a FOR loop.</li>
+<li>Set routes, which is relatively easy once you have the information.</li>
+</ul>
+<p>And <a target="_blank" href="http://www.urbandictionary.com/define.php?term=ftw">FTW</a>, I decided to also add in automatically logging into SecureClient. One batch script logs me in and mucks with the routing table. To find <em>that</em> information, I had to refer to a tome I wrote <a target="_blank" href="http://www.amazon.com/gp/redirect.html?ie=UTF8&amp;location=http%3A%2F%2Fwww.amazon.com%2FEssential-Check-Point-FireWall-1-Troubleshooting%2Fdp%2F0321180615%3Fie%3DUTF8%26s%3Dbooks%26qid%3D1174637500%26sr%3D8-5&amp;tag=phoneboycom-20&amp;linkCode=ur2&amp;camp=1789&amp;creative=9325">nearly four years ago</a><img width="1" alt="" src="{{ site.baseurl }}/images/ir?t=phoneboycom-20&amp;l=ur2&amp;o=1" height="1" />. Yes, I know it was published in 2004, but I did a lot of the writing for it in 2002/2003. Damn publisher lead times. Anyway, I looked in a more recent Check Point book (on NGX) that I had lying around and it didn't even cover SecureClient on the command line. It's not the first time I found something in my own book that hasn't made it into other, more recent books, either.</p>
+<p>Anyway, I am happy to say it's all working just fine. I do miss being able to use my SecureClient GUI (enabling CLI mode disables all that stuff), but I like how much easier the entire logging on experience is now. For those who are interested, I am posting my batch job after the break. If you're interested, click on thru and read my handy work.</p>
+<p><img alt="" src="{{ site.baseurl }}/images/trans.gif" /></p>
+<pre>@REM kill Echo<br />@echo off
+setlocal EnableDelayedExpansion
+set SCC="C:Program FilesCheckPointSecuRemotebinscc"
+%SCC% setmode cli
+rem %SCC% disconnect
+%SCC% up username %1%
+%SCC% connect "VPN Profile"
+%SCC% status
+%SCC% ep
+@REM Trying to pull out VPN route and mess with routing table
+@REM
+@REM Did we find the netmask line?
+set hitnetmask=0
+@REM Let's pull out a route I know will be there:
+@for /f "tokens=3" %%i in ('route print 192.168.0.0') do (
+@REM After we found the netmask, the next thing we get is the route we want
+@REM and make sure we get out of dodge
+if !hitnetmask! EQU 1 (
+call :set_nexthop %%i
+GOTO :found_route
+)
+@REM The next line after the "netmask" line is the one we want.
+if "%%i" == "Netmask" (call :set_hitnetmask)
+)
+:set_hitnetmask
+set hitnetmask=1
+GOTO :eof
+:set_nexthop
+set nexthop=%1
+GOTO :EOF
+:found_route
+echo Nexthop is %nexthop%, deleting/setting the routes appropriately
+echo on
+route delete 192.168.0.0 mask 255.255.255.0 %nexthop%
+route delete 192.168.0.2 %nexthop%
+route delete 192.168.2.253 %nexthop%
+route add 192.168.2.253 192.168.0.254
+@endlocal</pre>
+<div><a target="_blank" href="http://reblog.zemanta.com/zemified/b8ebeb15-dd14-44e7-b033-7e4e4f338fc0/"><img alt="Reblog this post with Zemanta" src="{{ site.baseurl }}/images/reblog_e.png?x-id=b8ebeb15-dd14-44e7-b033-7e4e4f338fc0" /></a></div>

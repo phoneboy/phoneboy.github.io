@@ -1,0 +1,33 @@
+---
+layout: post
+title: How To Get Check Point Secure Client Working With Sprint EVDO
+date: 2008-02-23 00:01:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- Check Point
+- mobile network operators
+- SecureClient
+- software
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<div class="posthaven-gallery" id="posthaven_gallery[567285]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/securemote-connect.png" />
+        </p>
+</p></div>
+<p>When I was at the car dealer yesterday giving my car some service love, I hung out at the dealership while the repair was taking place. My dealer is pretty good--they give you a coupon (or two) for a free latte while you wait for your car to be serviced. They offer WiFi throughout their waiting area. They also have a "lounge" where you can either use one of the computers they have or use your own.</p>
+<p>Despite the dealer having WiFi, I didn't use it. Why? Their system requires reauthenticating every two <em>hours</em>, which gets old when I know I am going to be there for at least twice that long. Instead, I decided to use my Sprint EVDO dongle.</p>
+<p>Unfortunately, I spent a long time fighting with the <a target="_blank" href="http://www.sprint.com/downloads">Sprint Connection Manager</a> software (version 1.10.0023.0) instead of working. When I tried to use it to connect, then started up my VPN to connect to the office, my EVDO connection would unceremoniously <em>disconnect</em>. I don't remember my Verizon card ever doing this.</p>
+<p>I eventually figured out how to get this combination working. The hint is in the graphic here. Sprint's software--and presumably Verizon's software--are simply front ends for the standard Windows dial-up networking. Sprint's software also has this NDIS mode in it--make sure it's set to RAS before you do this trick.</p>
+<p>In Check Point Secure Client (which us old-timers still call SecuRemote), I told it to use a Dial-up connection, which shows up in the Connection window. In my case, I ticked the Use Dial-up option and used the connection called CDMA. There was another one called 3G Connection that I didn't try. After this, Secure Client properly brought up the EVDO connection and started my VPN. The connection didn't drop once and worked reliably for the rest of the time I was at the dealer.</p>
+<p>I left the Sprint Connection Manager software running, but I don't believe it was necessary. It continued to show me signal strength and the like, but I did not see any details about how much data I was sending and receiving. That's ok, just as long as my EVDO worked.</p>

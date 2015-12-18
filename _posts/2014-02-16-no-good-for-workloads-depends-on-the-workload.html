@@ -1,0 +1,46 @@
+---
+layout: post
+title: No Good For Workloads? Depends on the Workload.
+date: 2014-02-16 03:26:07.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>From Chris Hoff's (a.k.a. Beaker) NGFW = <a href="http://www.rationalsurvivability.com/blog/2014/02/ngfw-no-good-for-workloads/" target="_blank">No Good For Workloads</a>:</p></p>
+<blockquote><p><strong>NGFW, as defined, is a campus and branch solution.</strong> <strong>Campus and Branch NGFW solves the “inside-out” problem</strong> — applying policy from a number of known/identified users on the “inside” to a potentially infinite number of applications and services “outside” the firewall, generally connected to the Internet. They function generally as forward proxies with various network insertion strategies.</p>
+</blockquote>
+<p>If you look at the functionality Check Point and its various competitors provide, this is precisely what a large chunk of the "next generation" functionality is geared towards--protecting a number of known/identified users from the dangers they might encounter from a potentially infinite number of application and services. There are differences in how the different security solutions perform this task, as well as how well they perform, but that's their overall goal.</p>
+<p>That is, as Beaker continues, very different from what a Data Center firewall needs to do:</p></p>
+<blockquote><p><strong>Data Center NGFW is the inverse of the “inside-out” problem.  They solve the “outside-in” problem;</strong> applying policy from a potentially infinite number of unknown (or potentially unknown) users/clients on the “outside” to a nominally diminutive number of well-known applications and services “inside” the firewall that are exposed generally to the Internet.  They function generally as reverse proxies with various network insertion strategies.</p>
+</blockquote>
+<p>In other words, we're not always sure who is coming in, but we know what they are going to and (hopefully) what applications and services they are going to connect to. </p>
+<p>What kinds of protection do you need in these scenarios? Usually very different. Can every next generation firewall provide just the right protection? </p>
+<p>First, let's take a step back and realize that the Data Center itself is very different from what it used to be a decade or two ago. Whereas we started with a number of servers hosting resources in one or two physical locations with users mostly in known physical locations, we now potentially have services, data, and users all over the place, with a mix of physical and virtual servers where traditional methods of segmentation and protection are not practical. </p>
+<div class="posthaven-gallery" id="posthaven_gallery[636333]">
+<p class="posthaven-file posthaven-file-image posthaven-file-state-processed">
+          <img class="posthaven-gallery-image" src="{{ site.baseurl }}/images/WheresTheCore.PNG" />
+        </p>
+</p></div></p>
+<p>The "core" of the enterprise network--where all the necessary resources ultimately connect together--is quickly becoming the Internet itself. How do you protect your resources in this reality?</p>
+<p>We go back to one of the fundamental tenets of information security, our old friend segmentation. This means grouping together resources with like function and like information confidentiality levels, placing a enforcement point at the ingress/egress point where you can enforce the appropriate access control policy. The goal for that enforcement point? Let the authorized stuff in and keep the unauthorized and bad stuff out. </p>
+<p>Of course with virtualization, end user PCs, and mobile devices, the boundaries become more difficult to apply but with virtualized security solutions, integrated endpoint security on the end user PCs, trusted channels (VPNs), and secure containers on mobile devices, more is possible than you think. Check Point and other companies have various solutions for this. </p>
+<p>Once the network is segmented and enforcement points are in place, then you can decide what protections and policies should be applied. In some cases, like on User Segments, you want lots of protection as users could go anywhere on the Internet and unknowingly bring in some malware to run amok in your network or send company secrets to their Gmail account. For your data center? Maybe you just want to make sure authorized users can reach specific applications and you want to sanity check the traffic to make sure it's not malicious. Or maybe you just need a simple port-based firewall with low latency for a given app.</p>
+<p>The idea of putting a firewall as the core of your network--especially a next generation one-- is silly, as Beaker rightfully points out. Really, your core should be a transit network with enforcement points--those things we typically call firewalls--at the ingress point of the various network segments. This way, just the right policy and just the right protections can be applied without applying them to traffic that doesn't need it. </p>
+<p>This is where I think Check Point's portfolio shines. In the Security Gateway space, the Software Blades architecture is flexible enough to allow you to be very granular about what protections are applied to a specific enforcement point, whether a physical gateway, or a virtual one either in a Check Point chassis (e.g. VSX) or in a VMware or Amazon Web Services environment. This means you can scan a random MS Word document from the Internet for malware on one gateway close to the users while not impeding the flow of traffic in and out of your Data Center that flows through a different Security Gateway. And yes, if you have a 5 microsecond transmission requirement, Check Point has a solution for that with the Security Acceleration Module in the 21000 series of appliances. </p>
+<p>Does an NGFW solve every problem? No, and anyone that tells you it will is flat out wrong. It's not always the right tool for the job, as Beaker points out:</p></p>
+<blockquote><p>Show me how a forward-proxy optimized [Campus &amp; Branch] NGFW deals with a DDoS attack (assuming the pipe isn’t flooded in the first place.)  Show me how a forward-proxy optimized C&amp;B NGFW deals with application level attacks manipulating business logic and webapp attack vectors across known-good or unknown inputs.</p>
+</blockquote>
+<p>While an Enforcement Point needs to be hardened for DDoS--especially if it is exposed to the Internet--no Enforcement Point is going to completely mitigate a DDoS. There are a number of mitigation strategies that include on-premise DDoS-specific appliances as well as external services, which I know Check Point has advised customers to utilize in various scenarios as part of their <a href="https://www.checkpoint.com/services/threatcloud-security-services/incident-response-service.html" target="_blank" title="Link: https://www.checkpoint.com/services/threatcloud-security-services/incident-response-service.html">Incident Response Services</a>.</p>
+<p>Likewise, business logic and webapp attack vectors are outside of the wheelhouse of all NGFWs. You still need to properly secure your web applications, even with an NGFW in place. In addition, there are dedicated, Web Application Firewalls for this purpose and if you've properly segmented your network, you can make sure only those resources are protected by them.</p>
+<p>At the end of the day, a Next Generation Firewall, whether it is from Check Point or someone else, is not a panacea. It can be a powerful tool, but like all tools, it needs to be applied properly as part of a comprehensive security strategy that begins with proper segmentation and a well-defined policy. From there, you can apply just the right protection to just the right resources.</p>
+<p><b>Disclaimer</b>: <a href="http://phoneboy.net/growing-up-with-check-point" target="_blank">It should be obvious from my last post</a> I work for Check Point, but this is my own opinion. </p>

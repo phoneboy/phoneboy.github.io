@@ -1,0 +1,35 @@
+---
+layout: post
+title: The Department of Yes
+date: 2014-11-23 16:42:39.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>I was listening to <a href="http://wiki.securityweekly.com/wiki/index.php/Episode395" target="_blank">Episode 395 of the Security Weekly podcast</a> when I heard one of the guys say that Information Security is often The Department of No. As in, no, you can't use that device. No, you can't use this new technology. Why? Because we can't secure it or control it. Because the risk of data loss is too great. Because NSA. Or whatever boogeyman The Department of No can come up with.</p>
+<p>There are points on both sides of this debate. Anytime a new device connects to a network, regardless of what it is, there is always additional risk. If that device is controlled by the company, the risk is significantly less. If they don't control it, and there are inadequate security measures built into the network they connect to, it's another potential member of a botnet or worse. </p>
+<p>Despite all these risks, people want to use whatever device they want wherever they want and <i>still get to and work with corporate data</i>. Most users have zero clue about the potential information security implications of this, and even those that do--often those folks who sign paychecks--don't care because <i>they want what they want</i>, implications be damned.</p>
+<p>So what's a poor information security professional to do? How can they become The Department of Yes while minimizing the associated risks these new technologies present?</p>
+<p>First, we should ask the question: what is it we're trying to protect, anyway? Certainly an unmanaged devices presents a risk and should be connected to an untrusted network, such as a guest WLAN. You have your network properly segmented to allow this, right?</p>
+<p>Next, you should ask the question: what is it that device needs access to? Certainly not the entire internal network, but some subset of it. Common items include Email, some intranet sites, their home fileshare, and maybe Salesforce. </p>
+<p>Of course, the minute you provide access to that data to an unmanaged device, there's a risk for that data to be <i>lost</i> somehow, which should raise the hackles of any information security professional. The common reactions to this phenomenon are to not allow access to any data, only allow access to very limited, harmless data, or to allow it only on condition of <i>managing</i> the device (i.e. with a Mobile Device Management solution). Users, on whole, like none of these options.</p>
+<p>Another option is available, and that's the concept of a <i>secure container</i>. This allows an unmanaged device to access sensitive data within a container that is secured and controlled by the business. The user can do what they need to do, the data only stays inside that container, that data is stored securely on the device, and the business can revoke access to that data at any time <i>without managing the entire device.</i> </p>
+<p>The challenge with any container-type solution, of course, is doing this without compromising the end user experience. The users still need to be able to access and potentially manipulate this data in an intuitive manner. If adding a container-type solution degrades the end user experience, end users won't accept it and will demand a less secure solution. </p>
+<p>There are a number of different solutions that operate on this principle. The ones I am most familiar with are the ones Check Point sells. Given I work there, that should be no shock to any of you. They include:</p>
+<ul>
+<li>
+<a href="http://www.checkpoint.com/products/mobile-access-software-blade/" target="_blank">Mobile Access Blade</a>, which provides a way for unmanaged desktop/laptop systems to access corporate and manipulate documents within a Secure Workspace. This workspace is encrypted and disappears from the local system when the end user disconnects from the gateway.</li>
+<li>
+<a href="http://www.checkpoint.com/capsule/" target="_blank">Capsule</a>, which enables similar access on mobile devices, as well as provides a clean pipe to mobile <i>and</i> desktop systems that are off your corporate premises by routing traffic to Check Point's cloud where traffic is inspected using Check Point's Software Blades using <i>the same policy</i> you've already defined for your enterprise environment.</li>
+</ul>
+<p>Regardless of whose solutions you choose, they allow you to be The Department of Yes. Yes, you can access that data with your chosen device without the enterprise losing control of the data. Everyone wins.</p>

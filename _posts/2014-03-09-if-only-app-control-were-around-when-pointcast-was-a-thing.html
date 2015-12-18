@@ -1,0 +1,52 @@
+---
+layout: post
+title: If Only App Control Were Around When Pointcast Was A Thing
+date: 2014-03-09 07:23:25.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>Back when I first got into IT and just started working with FireWall-1, Pointcast was a thing. For those who weren't around back in the mid to late 1990s, Pointcast had a very popular screensaver that displayed news and other information delivered periodically over the Internet to PCs. The problem was: it used an excessive amount of bandwidth on corporate networks, especially if more than a couple of people used it.</p>
+<p>The result was, of course, corporations wanted to block access to Pointcast. The problem: how to do it. All we had in the mid 1990s was the traditional firewall which could control access based on IP and port. So we should be able to block the port or IPs it communicates with, right?</p>
+<p>Pointcast used good old HTTP. Even back then, no one in their right mind would block HTTP. Of course, everything uses HTTP or HTTPS to communicate these days, and with a traditional firewall with the ability to control traffic only by IP or port, leaving HTTP or HTTPS wide open is tantamount to leaving the barn door open. </p>
+<p>Pointcast didn't exactly publish their list of servers, but users of the PhoneBoy FireWall-1 FAQ contributed a list of IPs plus a couple of other clever solutions to the problem, which I've made available after the break if you're curious.</p>
+<p>Of course, with things like content delivery networks, Amazon Web Services, and a host of other ways to serve up an application to users that are available today, attempting to control access to these applications merely by port and IP address is crazy. </p>
+<p>Fortunately, there are a number of solutions to this problem. Check Point's solution is the Application Control Software Blade, which can allow/block access to an application regardless of the ports and destination IP users, and even limit the bandwidth these applications use. New applications or changes to existing applications are made available to the gateway periodically so you can see that you're users are using it and, when it kills you bandwidth or worse, you can block it. </p>
+<p>If only tools like App Control were available back in the day, security admins could have spent more time on more important issues rather than figuring out how to block Pointcast and other applications and I would have a few less FAQ entries on "how do I block X application."</p>
+<p><span id="more"></span>
+<p>There are a few ways to block access to Pointsec:</p>
+<ol>
+<li><a>Deny HTTP Access to Pointcast Servers</a></li>
+<li><a>Use the HTTP Security Server</a></li>
+<li><a>Create a Dummy Host in your DNS/WINS</a></li>
+</ol>
+<h4>
+<a></a>Deny HTTP Access to Pointcast Servers</h4>
+<p>To deny HTTP requests to the Pointcast HTTP server, deny access to the following machines:
+<p>205.228.184.31 through 205.228.184.60, inclusive. <br />206.64.127.31 through 206.64.127.60, inclusive.</p>
+<p>To minimize the number of network objects needed (since range objects aren't supported), create the objects as follows and put them into a group:</p>
+<p>Create host 205.228.184.31 <br />Create network 205.228.184.32 with subnet mask 255.255.255.240 (include broadcast) <br />Create network 205.228.184.48 with subnet mask 255.255.255.248 (include broadcast) <br />Create network 205.228.184.56 with subnet mask 255.255.255.252 (include broadcast) <br />Create host 205.228.184.60</p>
+<p>Create host 206.64.127.31 <br />Create network 206.64.127.32 with subnet mask 255.255.255.240 (include broadcast) <br />Create network 206.64.127.48 with subnet mask 255.255.255.248 (include broadcast) <br />Create network 206.64.127.56 with subnet mask 255.255.255.252 (include broadcast) <br />Create host 206.64.127.60</p>
+<p>Deny HTTP traffic to these hosts.</p>
+<h4>
+<a></a>Using HTTP Security Server</h4>
+<p>Thanks to <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=Daniel.Blander@ACSacs.Com" target="_blank">Daniel Blander</a> for this idea:
+<p>Create a URI resource that filters the following URLs:</p>
+<p>http://*/FIDO*/*</p>
+<p>This roughly translates to creating a Wildcard URI Resource with the following parameters:</p>
+<p>Service: http <br />Action: all <br />Host: * <br />Path: /FIDO* <br />Query: *</p>
+<p>You will want to use this URI resource in a rule that denies access.</p>
+<h4>
+<a></a>Create a Dummy Host in your DNS/WINS</h4>
+<p>Thanks to Mark Syroka for this idea.
+<p>Create an entry in your DNS or WINS for the hostname PCNPROXY. Your clients will try and access whatever host resolves to this name if it exists. If you wish to use the PointCast Caching Manager, which is designed to Cache PointCast Requests and is available for free from <a href="https://web.archive.org/web/20020602093526/http://www.pointcast.com/products/intranet/">http://www.pointcast.com/products/intranet/</a>, your DNS/WINS entry would point to this machine. Otherwise, this entry can point to a non-existant machine or any machine that does not run a web server on port 80.</p>

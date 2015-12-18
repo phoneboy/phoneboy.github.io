@@ -1,0 +1,30 @@
+---
+layout: post
+title: Trust No One?
+date: 2012-12-13 17:57:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>Trust. It's something I'm sure many security professionals think about in various contexts. However, I don't think anyone can fully appreciate the level of trust that we exercise on a daily basis without really thinking about it.</p>
+<p>Just think about getting packets from point A to point B. There's an insane amount of things we simply trust without really thinking about it. This includes:</p>
+<ol>
+<li>The program running on point A to generate traffic: who created that program? Will that program do something you don't expect?</li>
+<li>The OS running on point A: is that program running through an OS where key calls are "compromised" in the same way that the recent <a target="_blank" href="http://www.securelist.com/en/blog/208193935/New_64_bit_Linux_Rootkit_Doing_iFrame_Injections" title="Link: http://www.securelist.com/en/blog/208193935/New_64_bit_Linux_Rootkit_Doing_iFrame_Injections">Linux Rootkit</a> was?</li>
+<li>The various processors that run on point A: are those processors calculating true? <a target="_blank" href="http://en.wikipedia.org/wiki/Pentium_FDIV_bug" title="Link: http://en.wikipedia.org/wiki/Pentium_FDIV_bug">Will they have a divide-by-zero bug like ye olde Pentium processors?</a> Or did someone replace the processors in your device with one that purposefully does what you don't expect?</li>
+<li>The transmission medium of those packets: how secure is that medium? Who (or what) can read those packets off the wire, or the air as appropriate?</li>
+<li>The routers and switches along the way between point A and point B. They, too, are computers running code, are they not? Are they configured correctly? Will they route the packets along the path you expect? Are they potentially compromised as a result of bad design or malicious intent?</li>
+<li>Point B, that receives the traffic: does it believe what it is reading off the wire? How does it know Point A sent it? Will Point B process it correctly?</li>
+</ol>
+<p>And so on. Trying to account for all these possibilities to ensure absolute security is next to impossible and will surely drive you crazy. That said, the thought exercise is important if you're trying to design a secure system. All of your assumptions about various elements of that system must be examined on a regular basis to ensure that you don't miss when something transitions from a largely theoretical threat to a very real one.</p>
+<p>Soon, I'll share some ideas on what a "trust no one" network might look like. Does such a thing exist today? Is maintaining such a thing even practical?</p>

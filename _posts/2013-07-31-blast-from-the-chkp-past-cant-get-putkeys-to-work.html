@@ -1,0 +1,255 @@
+---
+layout: post
+title: 'Blast from the CHKP Past: Can''t Get Putkeys to Work'
+date: 2013-07-31 14:27:13.000000000 -07:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>For those of you who never had to work with Check Point FireWall-1 4.1 and earlier, you're lucky you likely never EVER had to use putkeys.</p>
+<p>The fw putkey was used to establish authentication between the Management and Firewall modules. The problem was: the authentication would frequently break. Especially in larger, distributed environments. Often for reasons that no one outside of a few developers in Tel Aviv never fully understood.</p>
+<p>The eventual replacement for fw putkey was SIC, which was added in FireWall-1 NG (5.0). It is based on certificates and is way easier to set up. It's also far less prone to random breakage. </p>
+<p>The following classic article is presented for nostalgia purposes only. Hopefully no one in their right mind still needs this article, which was very popular on my FireWall-1 FAQ back in the day. It was the collective wisdom of my peers and my own experience as of around 2000 or so.</p>
+<p><span id="more"></span></p>
+<h1> Can't Get Putkeys to Work</h1>
+<h2> Q:</h2>
+<p> I can't get my putkeys to work ir I can't keep them working. What am I<br />
+ doing<br />
+wrong?</p>
+<h2> A:</h2>
+<p> One thing that I've always done on habit with my firewall systems is to</p>
+<p>make sure all IPs on both the management and firewall are resolvable to<br />
+ a<br />
+hostname within the system's local host file and that the systems are<br />
+ configured<br />
+to look at the local hosts file before looking to DNS. As a<br />
+ result, the<br />
+number of issues I personally have had with putkeys in any<br />
+ systems I have<br />
+personally set up have been minimal. I would suggest doing<br />
+ this before redoing<br />
+all your putkeys. Also, double-check to make sure the time on your management<br />
+console and firewall module have their time synchronized (relative to GMT).</p>
+<p>One known issue: If you are using skey authentication on versions of<br />
+ FireWall-1<br />
+prior to 4.0 SP5, there is an issue whereby the authentication<br />
+ can get out<br />
+of sync. Either use fwn1 (which works on systems 4.0 SP4 and<br />
+ earlier) or<br />
+use none authentication. For more information, see: <a target="_blank">Failed</p>
+<p>to Install Security Policy on fw62bs01: Unauthorized action.</a></p>
+<p>If you have to redo your putkeys, there are three methods one can use</p>
+<p>to do putkeys, one of which usually works:
+ </p>
+<ul>
+<li> <a target="_blank">Putkey with all IPs</a>
+</li>
+<li> <a target="_blank">Forcing the nodename IP</a>
+</li>
+<li> <a target="_blank">Touching all putkey-related files</a>
+</li>
+<li> <a target="_blank">Flushing all putkey-related files</a>
+</li>
+<li> <a target="_blank">If you don't want to fwstop the firewall module</a>
+</li>
+<li> <a target="_blank">As A Last Resort</a>
+</li>
+</ul>
+<h3> <a target="_blank"></a>Putkey with all IPs</h3>
+<p> A trick I have found that works is to use all possible IP addresses in<br />
+ a<br />
+putkey command. For example, if my management console had only one IP<br />
+ (172.31.0.42)<br />
+and my firewall had several IPs:</p>
+<p><tt>le0: 153.1.214.10</tt> <br /><tt>qe0: 192.168.0.10</tt> <br /><tt>qe1: 172.16.0.10</tt> <br /><tt>qe2: 10.0.0.10</tt> </p>
+<p>My putkey from the management console to the firewall would look like</p>
+<p>this:
+ </p>
+<p><tt>fw putkey 153.1.214.10 192.168.0.10 172.16.0.10 10.0.0.10</tt> </p>
+<p>And my putkey from the firewall to the management console would be:
+ </p>
+<p><tt>fw putkey 172.31.0.42</tt> </p>
+<p>In a step-by-step manner, here is what you would do:
+ </p>
+<ol>
+<li> fwstop both the management and firewall modules</li>
+<p>    </p>
+<li> On the FireWall, type: <tt>fw putkey 172.31.0.42</tt>
+</li>
+<p>    </p>
+<li> On the management console, type: <tt>fw putkey 153.1.214.10 192.168.0.10
+<p>172.16.0.10 10.0.0.10</tt>
+</li>
+<p>
+<li> fwstart the management console</li>
+<p>    </p>
+<li> fwstart the firewall module</li>
+</ol>
+<h3> <a target="_blank"></a>Forcing the nodename IP</h3>
+<p> When performing the authentication necessary for remote management, FireWall-1</p>
+<p>will attempt to use the 'nodename IP' to communicate between the systems.</p>
+<p>If the nodename IP does not exist or is not reachable from all systems,<br />
+ this<br />
+causes putkeys to not work. A way to get around this problem is to<br />
+ use putkey<br />
+in the following manner:</p>
+<p><tt>fw putkey -n local-ip remote-ip</tt> </p>
+<p>The "local ip" here depends on which interface you will need to talk<br />
+ out<br />
+to see the remote system. The "remote ip" will be the IP address that<br />
+ is<br />
+closest to you.
+ </p>
+<p>For instance, if your firewall had the following interfaces:
+ </p>
+<p><tt>le0: 153.1.214.10</tt> <br /><tt>qe0: 192.168.0.10</tt> <br /><tt>qe1: 172.16.0.10</tt> <br /><tt>qe2: 10.0.0.10</tt> </p>
+<p>And your management console had the following interfaces:
+ </p>
+<p><tt>le0: 172.16.10.42</tt> </p>
+<p>On the firewall console, you would type:
+ </p>
+<p><tt>fw putkey -n 172.16.0.10 172.16.10.42</tt> </p>
+<p>On the management console, you would type:
+ </p>
+<p><tt>fw putkey -n 172.16.10.42 172.16.0.10</tt> </p>
+<p>In a step-by-step manner, here is what you would do:
+ </p>
+<ol>
+<li> fwstop both the management and firewall modules</li>
+<li> On the FireWall, type: <tt>fw putkey -n 172.16.0.10 172.16.10.42</tt>
+</li>
+<li> On the management console, type: <tt>fw putkey -n 172.16.10.42 172.16.0.10</tt>
+</li>
+<li> fwstart the management console</li>
+<li> fwstart the firewall module</li>
+</ol>
+<h3> <a target="_blank"></a>Touching all putkey-related files</h3>
+<p> <a target="_blank" href="mailto:karimi@ca.ibm.com">Karim Ismail</a> makes the following</p>
+<p>suggestion: Simply "touch" the following files (i.e. use the Unix/IPSO<br />
+ "touch"<br />
+command) before performing the putkey command:</p>
+<p>$FWDIR/conf/fwauth.keys<br />
+ <br />
+$FWDIR/conf/serverkeys.*<br />
+ <br />
+$FWDIR/database/authkeys.C<br />
+ <br />
+$FWDIR/database/opsec_authkeys.C
+ </p>
+<h3> <a target="_blank"></a>The control.map file</h3>
+<p> Sometimes, you will need to add IP addresses to $FWDIR/lib/control.map<br />
+ because,<br />
+for whatever reason, FireWall-1 is not seeing the IP address it<br />
+ is hearing<br />
+the connection from as the appropriate type of host (either<br />
+ as a remote<br />
+firewall module or a management console). In any case, you<br />
+ can insure that<br />
+FireWall-1 is handling this correctly by editing $FWDIR/lib/control.map.</p>
+<p>Add <b>all</b> the IPs of the remote hosts you wish to authenticate with</p>
+<p>in a new line (above the MASTERS, CLIENT, and * lines) and force the authentication</p>
+<p>that will be used for these IPs to the appropriate authentication scheme</p>
+<p>(fwn1, fwa1, skey).</p>
+<p><tt>a.b.c.d, e.f.g.h : */fwa1</tt> <br /><tt>MASTERS :stat,getkey,gettopo/none opsec/fwn1 */fwa1</tt> <br /><tt>CLIENT  :load,db_download,fetch,log/fwa1   opsec/fwn1</p>
+<p>*/none</tt> <br /><tt>*       :stat,getkey,gettopo/none<br />
+ unload,ioctl,load,db_download/deny<br />
+opsec/fwn1 */fwa1</tt> </p>
+<p>If you edit this file, stop and start FireWall-1. For more information <br />
+on control.map, see: <a target="_blank">Failed to Install Security Policy<br />
+on fw62bs01: Unauthorized action<br /></a></p>
+<p><a target="_blank"></a> </p>
+<h3> <a target="_blank"></a>Flushing All Putkey-Related Files</h3>
+<p> There are some cases where even this does not work. Here is a procedure</p>
+<p>developed by <a target="_blank" href="mailto:lance@spitzner.net">Lance Spitzner</a> (which</p>
+<p>I have slightly modified):</p>
+<p>On the Management Module
+ </p>
+<ul>
+<li>  fwstop</li>
+<li>  Backup the following files by copying them to &lt;filename&gt;.old</li>
+<ul>
+<li> $FWDIR/database/authkeys.C</li>
+<li> $FWDIR/database/opsec_authkeys.C</li>
+<li> $FWDIR/conf/fwauth.keys</li>
+<li> $FWDIR/conf/serverkeys.*</li>
+</ul>
+<li> Remove the above files</li>
+<li> Confirm that $FWDIR/lib/control.map is using the same authentication<br />
+as<br />
+ the remote modules (fwa1 or skey).</li>
+<li> Make sure /etc/hosts has an entry for the remote module(s).</li>
+</ul>
+<p> On the Remote Module</p>
+<ul>
+<li> fwstop</li>
+<li> Backup the following files by copying them to &lt;filename&gt;.old</li>
+<ul>
+<li> $FWDIR/database/authkeys.C</li>
+<li> $FWDIR/database/opsec_authkeys.C</li>
+<li> $FWDIR/conf/fwauth.keys</li>
+<li> $FWDIR/conf/serverkeys.*</li>
+</ul>
+<li> Remove the above files</li>
+<li> Confirm that $FWDIR/lib/control.map is using the same authentication<br />
+as<br />
+ the management module (fwa1 or skey).</li>
+<li> Make sure /etc/hosts has an entry for the management module.</li>
+</ul>
+<p> On the Management Module: fw putkey -p &lt;password&gt; -n &lt;local IP&gt;<br />
+&lt;remote<br />
+ IP&gt;</p>
+<p>On the Remote Module: fw putkey -p &lt;password&gt; -n &lt;local IP&gt;<br />
+&lt;remote<br />
+ IP&gt;
+ </p>
+<p>On the Mangement Module: fwstart
+ </p>
+<p>On the Remote Module: fwstart
+ </p>
+<p>That's it!  If that did not do the trick, ensure all Network Objects</p>
+<p>in Rule Base match /etc/hosts file and fw putkey IP addresses.  Repeat</p>
+<p>steps above.
+ </p>
+<h3> <a target="_blank"></a>If you don't want to fwstop the firewall modules</h3>
+<p> I personally have had success sometimes simply killing and restarting fwd,</p>
+<p>which is not as drastic as restarting FireWall-1, but can make certain<br />
+ services<br />
+unavailable. However, <a target="_blank" href="mailto:bfilmer@ims.telstra.com.au" title="Link: mailto:bfilmer@ims.telstra.com.au">Bradley</p>
+<p>Filmer</a> says this method does not require fwstopping the firewall module.</p>
+<p>On the firewall module, edit $FWDIR/database/authkeys.C and remove everything</p>
+<p>between the opening parenthesis "(" and the closing parenthesis ")". Redo</p>
+<p>the putkeys using one of the methods above (he suggests using the -n method,</p>
+<p>but only use that method if you have to). On the management console, do<br />
+ the<br />
+same thing except perform an fwstop and fwstart afterwords.
+ </p>
+<h3> <a target="_blank"></a>As a Last Resort</h3>
+<p> Sometimes, you will need to reboot either the management console, firewall</p>
+<p>module, or both to make putkeys work. Don't necessarily have an explanation</p>
+<p>for it. If you reboot one but not the other, execute an fwstop; fwstart<br />
+ on<br />
+the other box.</p>
+<p>Even after that, it may not work either. What you can do is disable<br />
+ putkey<br />
+authentication entirely. Note that this is not entirely recommended<br />
+ in all<br />
+cases, but if you need to get it working quickly, this trick will<br />
+ definately<br />
+work. Edit control.map as above on all involved systems and<br />
+ use "none" as<br />
+the authentication scheme. Stop and start FireWall-1. You<br />
+ will no longer<br />
+have any more troubles with putkeys between these systems<br />
+ as you have effectively<br />
+reduced the authentication to IP only.
+ </p>

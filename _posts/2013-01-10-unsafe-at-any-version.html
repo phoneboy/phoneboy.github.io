@@ -1,0 +1,23 @@
+---
+layout: post
+title: Unsafe At Any Version?
+date: 2013-01-10 15:28:00.000000000 -08:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+author:
+  login: phoneboy
+  email: dwelch@phoneboy.com
+  display_name: Dameon Welch-Abernathy
+  first_name: ''
+  last_name: ''
+---
+<p>It's funny, every time I read about yet another security vulnerability in Internet Explorer, such as the recent one involving <a target="_blank" href="http://blog.fireeye.com/research/2012/12/council-foreign-relations-water-hole-attack-details.html">Adobe Flash hosted on the Council of Foreign Relations website that performs a heap spray against Internet Explorer 8</a>, I am reminded of the old Ralph Nader tome <a target="_blank" href="http://en.wikipedia.org/wiki/Unsafe_at_Any_Speed" title="Link: http://en.wikipedia.org/wiki/Unsafe_at_Any_Speed">Unsafe at Any Speed</a>, which was a book released in 1965 about how unsafe the automobiles designed by the American Auto Industry are. Thus, the phrase "Unsafe at Any Version" seems to come to mind when I think of Internet Explorer. Likewise, I tend to think the same thing about Adobe Acrobat, Adobe Flash, or Adobe Shockwave (<a target="_blank" href="http://www.networkworld.com/news/2012/122012-adobe-to-patch-2-year-old-shockwave-265272.html">2 year old vulnerability, anyone?</a>)</p>
+<p>Is it fair to say these products are unsafe at any version? While evidence seems to suggest that is probably true, I believe the security problems we see in these products are evidence of their success. Okay, maybe <a target="_blank" href="http://www.justice.gov/atr/cases/f2600/2613g.pdf">Internet Explorer was successful because of being illegally tied to Microsoft Windows</a>, but I'm trying to remember the last time Internet Explorer, Adobe Flash, and Adobe Acrobat Reader were not considered "required items" for a PC.</p>
+<p>Which is part of the problem of keeping these programs secure. There is a <em>lot</em> of legacy code in those apps. They were written well before <a target="_blank" href="https://www.securecoding.cert.org/confluence/display/seccode/Top+10+Secure+Coding+Practices" title="Link: https://www.securecoding.cert.org/confluence/display/seccode/Top+10+Secure+Coding+Practices">Secure Coding Practices</a> became the norm. Internet Explorer itself has a fundamental flaw by being so tightly tied into the operating system. Rewriting code is no fun and, unless there is a significant business reason to do so, doesn't happen.</p>
+<p>Granted, Adobe <em>did</em> do this with Adobe Reader, but there's still a lot older Adobe Readers out there still, just waiting to be compromised. Just like there are millions of people still running XP and Internet Explorer 8, which Microsoft will eventually stop providing security patches for.</p>
+<p>These applications aren't going anywhere anytime soon. Which means the bad guys are going to continue to find vulnerabilities in these applications for the foreseeable future. It certainly will keep us good guys busy for the foreseeable future, too.</p>
