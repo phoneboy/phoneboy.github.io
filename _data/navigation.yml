@@ -1,4 +1,7 @@
 # Menu navigation links
 
+- title: RSS Feed
+  url: /index.xml
+
 - title: PhoneBoy Speaks Podcast
   url: https://phoneboy.com/ps
