@@ -1,4 +1,4 @@
 ---
 permalink: /rss/
+redirect_to: /index.xml
 ---
-{% include index.xml %}
