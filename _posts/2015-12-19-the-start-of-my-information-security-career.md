@@ -18,6 +18,9 @@ image:
 #  credit: dargadgetz
 #  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
 ---
+**Update**: For those who like to listen to audio instead of read, [I recorded
+a version of this story in podcast form](https://phoneboy.com/ps/1043).
+
 I'm feeling a bit nostalgic recently as I realized it's been 20 years since I entered what we now call the Information Security industry. In the early to mid 1990s, I don't necessarily know if this term existed, but viewing it through a current lens, I think it's safe to say that's when I entered.
 
 Of course, if you count the couple of years of system administration I did while I was in college, I started sooner. Back then there was just the guys who ran the servers. They had to do it all, including security. Of course, in those days, particularly in academia, everything was wide open to the Internet. Then again, no one outside of academia and a few large companies even had Internet access and most people didn't even know about it. 
