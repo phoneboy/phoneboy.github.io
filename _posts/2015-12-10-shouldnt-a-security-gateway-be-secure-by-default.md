@@ -5,7 +5,6 @@ date: 2015-12-10 08:08:04 -08:00
 type: post
 published: true
 status: publish
-permalink: /2015/12/06/marketing-hype-and-security-technology-that-actually-works/
 categories: []
 tags: []
 author:
