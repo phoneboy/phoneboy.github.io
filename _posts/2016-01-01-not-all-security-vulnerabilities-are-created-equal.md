@@ -53,6 +53,6 @@ access, unless you've performed some sort of drive encryption, that physical
 access could be leveraged to, say, steal or clone the drive. Which is a far
 more serious threat.
 
-In the grand scheme of things, this bug would not be a huge priority to fix.
-Unlike, say, the [backdoor in Juniper/Netscreen gear](https://www.techdirt.com/articles/20151219/07481133129/us-govt-agencies-freak-out-over-juniper-backdoor-perhaps-theyll-now-realize-why-backdoors-are-mistake.shtml)
+In the grand scheme of things, this bug would not be a huge priority to deploy
+a patch for in all cases. Unlike, say, the [backdoor in Juniper/Netscreen gear](https://www.techdirt.com/articles/20151219/07481133129/us-govt-agencies-freak-out-over-juniper-backdoor-perhaps-theyll-now-realize-why-backdoors-are-mistake.shtml)
 which can be remotely exploited.
