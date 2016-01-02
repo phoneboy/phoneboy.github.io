@@ -14,10 +14,12 @@ author:
   email: dwelch@phoneboy.com
   display_name: Dameon Welch-Abernathy
 #image:
-#  feature: abstract-3.jpg
+#  feature: patch_all_the_things.jpg
 #  credit: dargadgetz
 #  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
 ---
+<img style="float: right;" src="/images/i_dont_always_patch_all_the_things.jpg">
+
 From [Press Backspace 28 times to own unlucky Grub-by Linux boxes](http://www.theregister.co.uk/2015/12/17/press_backspace_28_times_to_own_any_grubby_linux_box/):
 
 > A pair of researchers from the University of Valencia's Cybersecurity research group have found that if you press backspace 28 times, it's possible to bypass authentication during boot-up on some Linux machines.
