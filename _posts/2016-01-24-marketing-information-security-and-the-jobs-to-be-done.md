@@ -54,6 +54,9 @@ Palo Alto Networks, to their credit, also uses the word prevention, and it's def
 
 One thing to note about Gartner is they measure perception. Reality is measured by another organization: NSS Labs. They do this through a series of group tests performed on various security products and provide the results to paying customers. Vendors such as Check Point can also purchase marketing rights to the reports as well. If you're interested, you can see [how Check Point performed in the latest Breach Detection Systems test](http://www.checkpoint.com/resources/nss-bds/index.html). The TL;DR version: a "recommended" rating was received, as Check Point has received on numerous group tests over the last several years.
 
-One vendor is conspicuously absent in the latest BDS test: Palo Alto Networks. [NSS Labs CTO Bob Walder had something to say about this](https://twitter.com/bwalder/status/567714065057730560).
+One vendor is conspicuously absent in the latest BDS test: Palo Alto Networks. NSS Labs CTO Bob Walder had something to say about this:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Question:If a vendor not only refused to participate in a test,but actively blocked our purchase of their product,would you want to know?</p>&mdash; Bob Walder (@bwalder) <a href="https://twitter.com/bwalder/status/567714065057730560">February 17, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Given that [PAN's EULA forbids publishing third party test results](https://www.linkedin.com/pulse/what-palo-alto-networks-still-afraid-dameon-welch-abernathy), the only way to validate any of their claims is in your own lab. Should they make your shortlist, I highly recommend testing it *head-to-head* with other, competitive solutions ensuring you follow [PAN's Best Practices](https://www.paloaltonetworks.com/documentation/70/pan-os/pan-os/threat-prevention/best-practices-for-securing-your-network-from-layer-4-and-layer-7-evasions.html).
