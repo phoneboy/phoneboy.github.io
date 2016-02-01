@@ -12,6 +12,10 @@ author:
   login: phoneboy
   email: dwelch@phoneboy.com
   display_name: Dameon Welch-Abernathy
+image:
+  feature: security-gate-bypass.jpg
+#  credit: Steve Jurvetson
+#  creditlink: https://www.flickr.com/photos/jurvetson/
 ---
 In my travels as a Security Architect for [Check Point Software Technologies](https://www.checkpoint.com), I have seen many different customer environments. Granted, there is only so much I can see over the course of a couple of days, but I've seen enough to get a sense for where companies are generally at.
 
