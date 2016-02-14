@@ -19,7 +19,7 @@ From [Exclusive: The OPM breach details you haven't seen](http://fcw.com/article
 
   The discovery of a threat to the background investigation data led to the finding two days later, on April 17, of a risk to the personnel records. US-CERT made the discovery by loading data on the April 15 incident to Einstein, the department's intrusion-detection system. On April 23, US-CERT spotted signs of the Dec. 15 exfiltration in "historical netflow data," and OPM decided that a major incident had occurred that required notifying Congress.
 
-SSL/TLS traffic is pretty common. However, to most security tools, this traffic is opaque. Unlike SSH, which is [impossible to inspect securely](http://securitytheater.phoneboy.com/2015/07/29/lies-damn-lies-and-inspecting-ssh-traffic-securely/), SSL/TLS can be inspected inline safely in a way that, for the most part, maintains the end-to-end security of the communications.
+SSL/TLS traffic is pretty common. However, to most security tools, this traffic is opaque. Unlike SSH, which is [impossible to inspect securely](/2015/07/29/lies-damn-lies-and-inspecting-ssh-traffic-securely/), SSL/TLS can be inspected inline safely in a way that, for the most part, maintains the end-to-end security of the communications.
 
 For this SSL/TLS traffic to be inspected, inline security gateways must examine the data as clear text. Encrypted data sent by a client to a web server is:
 
@@ -31,7 +31,7 @@ When the security gateway terminates the connection, a certificate must be prese
 
 Once the connection is terminated on the security gateway, the traffic can be inspected or filtered just like regular plaintext traffic. The options available will depend on the vendor you have for your security gateway. On current (R77.x) versions of Check Point, you have the following security features at your disposal (assuming you are licensed for them): Data Loss Prevention (DLP), Anti Virus, Anti-Bot, Application Control, URL Filtering, Threat Emulation and Intrusion Prevention.
 
-The firewall then initiates a connection as if it were the client to the server in question. The firewall validates the remote server presents a valid certificate for the site in question. If the server uses a self-signed certificate or some sort of certificate authority the firewall isn't familiar with, you will have to add it to the configuration as valid. This step ensures the remote end of the connection is valid and trusted--something that [SSH inspection is unable to do](http://securitytheater.phoneboy.com/2015/07/29/lies-damn-lies-and-inspecting-ssh-traffic-securely/). 
+The firewall then initiates a connection as if it were the client to the server in question. The firewall validates the remote server presents a valid certificate for the site in question. If the server uses a self-signed certificate or some sort of certificate authority the firewall isn't familiar with, you will have to add it to the configuration as valid. This step ensures the remote end of the connection is valid and trusted--something that [SSH inspection is unable to do](/2015/07/29/lies-damn-lies-and-inspecting-ssh-traffic-securely/). 
 
 There are a couple of issues with SSL decryption:
 

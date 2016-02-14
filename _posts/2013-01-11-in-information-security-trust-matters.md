@@ -17,7 +17,7 @@ author:
   first_name: ''
   last_name: ''
 ---
-In a previous post, I asked if we could [trust no one](http://securitytheater.phoneboy.com/2012/12/13/trust-no-one/) in Information Security. The reality is
+In a previous post, I asked if we could [trust no one](/2012/12/13/trust-no-one/) in Information Security. The reality is
 that, at some point, we have to trust. We have to trust that we have the right policy in place. We have to trust our people to do the right thing. We have to trust our tools will do their job.
 
 Of course, we should not blindly trust. We need to evaluate that our tools are doing their job, keeping the bad stuff out and enforcing the policy you've specified. We need to trust that our people are doing the right thing. Your tools are both enforcing the policy and educating the users about what the policy is, right? And, of course, you need to evaluate the policy to ensure it is both effective and in-line with business objectives.

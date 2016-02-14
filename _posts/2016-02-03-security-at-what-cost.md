@@ -26,6 +26,6 @@ The challenge, of course, is how do you quantify security and the value that sec
 
 This assumes you know what assets you're protecting, have some understanding about the value of those assets, and have some clue about the likelihood of a loss and what impact that might have to the asset's value. Many organizatons I've talked to can't articulate these things, and that's a problem. You have no idea how much you *should* spend to protect those assets. You don't want to spend $1000 to protect a $10 asset, but you might spend $10 to protect a $1000 asset. 
 
-And if you think information security professionals have a tough time figuring this stuff out, think about how everyone else approaches the same situation. Is there any wonder there is so much [FUD in information security marketing](http://securitytheater.phoneboy.com/2016/01/31/fud-and-cybersecurity-marketing/)?
+And if you think information security professionals have a tough time figuring this stuff out, think about how everyone else approaches the same situation. Is there any wonder there is so much [FUD in information security marketing](/2016/01/31/fud-and-cybersecurity-marketing/)?
 
 **Disclaimer**: I do work for a vendor: [Check Point Software Technologies](https://www.checkpoint.com). These thoughts are my own. 

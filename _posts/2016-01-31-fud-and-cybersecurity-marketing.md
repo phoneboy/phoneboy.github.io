@@ -26,7 +26,7 @@ From [Cockroaches Versus Unicorns: The Golden Age Of Cybersecurity Startups](htt
 
 A large part of the reason why the various cybersecurity companies use fear, uncertainty, and doubt (FUD) as part of their marketing strategy is largely **because it still works**. More specifically, it is because companies have no clue what "security" jobs need to be done. *These companies are already afraid* out of ignorance (willfull or otherwise).
 
-Various cybersecurity companies simply speak to this fear: "There's lots of bad things out there and our widget will protect you from it." Which, is, of course, patently false. [Even the best security products in the world are useless](http://securitytheater.phoneboy.com/2015/08/06/all-the-security-tools-in-the-world-wont-help-if-you-dont-do-this/) if they are not deployed as part of an overall strategy that includes people, policies, and process *working towards a common goal*. 
+Various cybersecurity companies simply speak to this fear: "There's lots of bad things out there and our widget will protect you from it." Which, is, of course, patently false. [Even the best security products in the world are useless](/2015/08/06/all-the-security-tools-in-the-world-wont-help-if-you-dont-do-this/) if they are not deployed as part of an overall strategy that includes people, policies, and process *working towards a common goal*. 
 
 It's not enough for cybersecurity vendors to market and sell widgets. **We must do better** and actually help our customers understand the real threats to their business, not just the ones that make the news. We must help them take steps to integrate security as part of their business process, enabling new capabilities that weren't possible before without significant risk. 
 

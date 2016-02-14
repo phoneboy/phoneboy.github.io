@@ -34,7 +34,7 @@ The acknowledgement by FireEye is misleading. First of all, the employer of the 
 
 ## Palo Alto Networks Evading For Three Years
 
-I've largely covered [the vulnerability in question](http://securitytheater.phoneboy.com/2015/12/24/palo-alto-networks-evading-the-truth/) on a previous post. The one update I can provide is that 3 years after the [original SANS Institude paper being published highlighting the deficiencies](https://www.sans.org/reading-room/whitepapers/intrusion/beating-ips-34137), Palo Alto Networks finally issued an update to their Application and Threat Content that addresses the issues. Or at least they addressed the issues demonstrated by the [666 different ways to bypass Palo Alto Networks](https://www.youtube.com/watch?v=cp-7Tl9gl5g) video, which are based on the same principles.
+I've largely covered [the vulnerability in question](/2015/12/24/palo-alto-networks-evading-the-truth/) on a previous post. The one update I can provide is that 3 years after the [original SANS Institude paper being published highlighting the deficiencies](https://www.sans.org/reading-room/whitepapers/intrusion/beating-ips-34137), Palo Alto Networks finally issued an update to their Application and Threat Content that addresses the issues. Or at least they addressed the issues demonstrated by the [666 different ways to bypass Palo Alto Networks](https://www.youtube.com/watch?v=cp-7Tl9gl5g) video, which are based on the same principles.
 
 ## More Examples
 

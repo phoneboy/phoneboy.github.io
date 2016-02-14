@@ -26,4 +26,4 @@ Of course, we're talking about the recent [Juniper](https://kb.juniper.net/InfoC
 
 I don't know that you'll get any security company to submit their source code to an external third party code review, but third party validation and assurance testing seems perfectly reasonable. In fact, vendors already do this with NSS Labs and Common Criteria testing. 
 
-Meanwhile, you have [vendors with restrictive EULAs](http://securitytheater.phoneboy.com/2014/11/20/what-is-palo-alto-networks-afraid-of/) that forbid this kind of activity. Which, given that this particular vendor spends more than half of their revenue on marketing, makes you wonder if they're in the security business or the marketing business.  
+Meanwhile, you have [vendors with restrictive EULAs](/2014/11/20/what-is-palo-alto-networks-afraid-of/) that forbid this kind of activity. Which, given that this particular vendor spends more than half of their revenue on marketing, makes you wonder if they're in the security business or the marketing business.  

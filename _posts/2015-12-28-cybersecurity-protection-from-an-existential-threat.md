@@ -38,7 +38,7 @@ effort to solve the problem. As if developing a single nuclear-type weapon
 will be enough to prevent all cybercrime.
 
 Those of us who've been in the industry for a couple of decades [already
-know how to significantly reduce the risks](http://securitytheater.phoneboy.com/2015/08/06/all-the-security-tools-in-the-world-wont-help-if-you-dont-do-this/). It doesn't even require new
+know how to significantly reduce the risks](/2015/08/06/all-the-security-tools-in-the-world-wont-help-if-you-dont-do-this/). It doesn't even require new
 technology, though some organizations will undoubtedly need to acquire
 some.
 

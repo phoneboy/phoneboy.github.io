@@ -22,4 +22,4 @@ stuff.
 
 I've also realize in the various moves the RSS feed changed a couple
 of times. For those of you still using RSS feeds, it's now:
-http://securitytheater.phoneboy.com/index.xml
+http://phoneboy.org/index.xml

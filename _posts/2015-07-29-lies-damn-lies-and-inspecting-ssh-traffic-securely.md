@@ -52,7 +52,7 @@ To summarize, when we man-in-the-middle SSH, we can only use password authentica
 * Possibly prevent file transfers provided they are done in a way the security gateway knows about (and there are many, many ways to do this over the CLI)
 * Possibly log commands issued over SSH
 
-Personally, I don't see the value of this SSH Inspection feature as it degregades SSH security unacceptably and provides little benefit above and beyond what you would get by **blocking SSH entirely** except for specific, trusted individuals accessing specific, known servers. If this is not feasible, I provide some suggestions for [inspecting SSH connections securely](http://securitytheater.phoneboy.com/2015/07/30/the-right-way-to-inspect-ssh-connections/) in another blog post.
+Personally, I don't see the value of this SSH Inspection feature as it degregades SSH security unacceptably and provides little benefit above and beyond what you would get by **blocking SSH entirely** except for specific, trusted individuals accessing specific, known servers. If this is not feasible, I provide some suggestions for [inspecting SSH connections securely](/2015/07/30/the-right-way-to-inspect-ssh-connections/) in another blog post.
 
 **Disclaimer**: I'm not sure what [Check Point Software Technologies](https://www.checkpoint.com) thinks about this issue as I didn't ask. These thoughts are my own.
 

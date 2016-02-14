@@ -22,7 +22,7 @@ From [No, Virginia, It Does NOT Mean That!](http://blogs.gartner.com/anton-chuva
 
 > Here are my top 5 reasons why DETECTION excellence does NOT automatically mean you can have PREVENTION: [Uncertainty, Timing, Vague Signals, False Positives, and Detecting From Exploration]
 
-This article, written by a VP of Research at Gartner, completely misses the most obvious element of a prevention stance: the ability to actually block the malicious traffic. That, of course, [requires segmentation](http://securitytheater.phoneboy.com/2015/08/06/all-the-security-tools-in-the-world-wont-help-if-you-dont-do-this/) and some security control that can actually block the traffic in question.
+This article, written by a VP of Research at Gartner, completely misses the most obvious element of a prevention stance: the ability to actually block the malicious traffic. That, of course, [requires segmentation](/2015/08/06/all-the-security-tools-in-the-world-wont-help-if-you-dont-do-this/) and some security control that can actually block the traffic in question.
 
 (By the way: anyone who truly believes detection is better than prevention should turn off their firewalls right now. Go ahead, turn them off. Oh wait, you actually want to block some traffic you know you don't want? That's not what a "detect only" mindset allows for.)
 
