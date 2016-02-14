@@ -9,6 +9,8 @@ status: publish
 permalink: 
 categories: []
 tags: []
+redirect_from:
+  - /2016/02/13/why-im-in-infosec-apple-epoch-reboot-loop-editiont/
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
