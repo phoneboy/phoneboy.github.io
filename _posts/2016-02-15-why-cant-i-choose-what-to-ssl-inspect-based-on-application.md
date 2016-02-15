@@ -18,7 +18,7 @@ image:
   #credit: phoneboy
   #creditlink: https://www.flickr.com/photos/armydre2008/
 ---
-SSL Decryption is a feature that is in current versions of the Check Point Security Gateway. It's in other competing products as well. I wrote a description of the technolofy in a previous blog post entitled [Why SSL Decryption Is Important](/2015/08/24/why-ssl-decryption-is-important/).
+SSL Decryption is a feature that is in current versions of the Check Point Security Gateway. It's in other competing products as well. I wrote a description of the technology in a previous blog post entitled [Why SSL Decryption Is Important](/2015/08/24/why-ssl-decryption-is-important/).
 
 All implementations of this feature have a configurable policy so you can decide what traffic to decrypt. Here is an example policy from a Check Point Security Gateway, which can use IP addresses or URL Filtering Categories:
 
