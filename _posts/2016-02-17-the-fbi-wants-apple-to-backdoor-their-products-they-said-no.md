@@ -18,7 +18,7 @@ image:
   #credit: phoneboy
   #creditlink: https://www.flickr.com/photos/armydre2008/
 ---
-Apple [wrote a letter](http://www.apple.com/customer-letter/) to customers regarding a request they had received from the United States Federal Bureau of Investigations to essentially "backdoor" an iPhone in possession so they can retrieved the encrypted data on it. I have repreoducd the letter in it's entirety below for posterity sake.
+Apple [wrote a letter](http://www.apple.com/customer-letter/) to customers regarding a request they had received from the United States Federal Bureau of Investigations to essentially "backdoor" an iPhone in possession so they can retrieved the encrypted data on it. I have reproduced the letter in it's entirety below for posterity sake.
 
 Data is protected on devices such as the iPhone with math. That's all cryptography is, folks: math. Granted, it's well beyond the stuff that most people learn in school, but it's all math in the end.
 
@@ -27,6 +27,8 @@ Aside from the specific math used in cryptography, what makes cryptography able 
 While it's possible to create encryption schemes where some third party has (or can derive) the encryption keys, which many governments are now asking for, keep in mind those encryption keys are merely facts. Facts that, once they are out there, can be used by **anyone** ("good" or "bad") and cannot easily be changed. These schemes put everyone's data at risk. (This is also why biometric data used for authentication purposes on it's own is not so fantastic, it's merely a fact that cannot be changed, but can be replicated.) 
 
 The worst part is the government probably already has all the information they need thanks to all the metadata they collect at the nation's telecom providers today. Why aren't they using that, or any number of other traditional methods of investigation, instead of asking Apple (and by extension other device manufacturers) to make their devices less secure? 
+
+**Edit**: Yes, I realize the FBI is asking for Apple to disable the 10 passcode tries erases the device option on devices, not backdoor the actual encryption (as noted in [this Techdirt article](https://www.techdirt.com/articles/20160216/17393733617/no-judge-did-not-just-order-apple-to-break-encryption-san-bernardino-shooters-iphone-to-create-new-backdoor.shtml). It's effectively disabling a key mechanism to protect the encryption keys, which ultimately has the same effect as backdooring the encryption itself.
 
 **Disclaimer**: I don't know what my employer [Check Point Software Technologies](https://www.checkpoint.com) thinks about this. I didn't ask. These are my own thoughts. 
 
