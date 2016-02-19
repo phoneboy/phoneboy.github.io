@@ -43,3 +43,5 @@ It's possible Apple didn't need new firmware to obtain access to the data it out
 The only other method available to Apple: hacking the actual device in much the same way jailbreakers do. The very same thing [John Mcafee is offering to do for free](http://www.ibtimes.co.uk/john-mcafee-i-can-hack-san-bernardino-iphone-fbi-apple-backdoor-like-giving-our-enemies-1544651) using his army of hackers with 24-inch purple mohawks, 10-gauge ear piercings, and tattooed faces--people not likely to be under the employ of the FBI.
 
 Regardless of whether or not this is technically possible, Apple is right to challenge this court order. The implications go well beyond this one iPhone and will impact our digital rights globally for decades to come.
+
+**Disclaimer**: I haven't asked what my employer [Check Point Software Technologies](https://www.checkpoint.com) thinks about all this. These thoughts are my own.
