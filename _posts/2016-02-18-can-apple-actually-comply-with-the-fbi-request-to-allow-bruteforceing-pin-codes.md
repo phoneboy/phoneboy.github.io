@@ -20,7 +20,7 @@ image:
 ---
 For a moment, anyway, ignore the politics of whether or not Apple *should* comply with the FBI's request to assist them in unlocking a particular iPhone relevant to a highly publicized terrorism case, which [has been court ordered](https://assets.documentcloud.org/documents/2714001/SB-Shooter-Order-Compelling-Apple-Asst-iPhone.pdf). Let's talk about whether it's actually possible or not, based on the information available and what I know is possible.
 
-To sumamrize, the request is to provide "reasonable technical assistance" to achieve the following three things:
+To summarize, the request is to provide "reasonable technical assistance" to achieve the following three things:
 
 1. Disable the auto-erase function (which can happen if this feature is enabled)
 2. Allow submission of passcodes via something other than the touchscreen
