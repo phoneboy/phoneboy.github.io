@@ -20,7 +20,7 @@ image:
 ---
 I will admit, I've never been a huge fan of Mobile Device Management (MDM). Given the way this whole kerfuffle between the FBI and Apple is playing out, anyone who cares about their personal digital privacy should think twice before subjecting their personally-purchased devices to MDM.
 
-One of many things an MDM solution can do is control the PIN code on the device. Namely, it can control that one exists, force a specific length of PIN, and even **reset** a PIN. This fact actually [entered the public discourse](http://www.cbsnews.com/news/common-software-would-have-unlocked-san-bernardino-shooters-iphone/) around the San Bernardino shooter's iPhone.
+One of many things an MDM solution can do is control the PIN code on the device. Namely, it can control that one exists, force a specific length of PIN, and even **reset** a PIN. This fact [entered the public discourse](http://www.cbsnews.com/news/common-software-would-have-unlocked-san-bernardino-shooters-iphone/) around the San Bernardino shooter's iPhone that the FBI is trying to get Apple to assist them in unlocking.
 
 If San Bernardino County (who owned the phone the shooter used) installed MDM on the target device, the whole public debate around this would not be happening. I don't know of any company who would deny a request to reset or disable the PIN, particularly if it were backed by a court order. Unlike what the FBI is asking Apple to do now, it would not be burdensome to carry out, either.
 
