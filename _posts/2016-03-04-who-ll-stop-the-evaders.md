@@ -41,4 +41,4 @@ Keep in mind that both Evader tools merely demonstrate *known* techniques to eva
 
 **Disclaimer**: My employer [Check Point Software Technologies](https://www.checkpoint.com) may or may not have differing views on this topic. These thoughts are my own.
 
-**Edited to add** a link to the Stonesoft Evader tool on 5 March 2016
+**Edited to add** a link to the Stonesoft Evader tool on 5 March 2016.
