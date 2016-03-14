@@ -39,7 +39,7 @@ Is it really protection? From [Palo Alto's documentation on WildFire](https://ww
 
 Considering how easy it is to take a malicious file and change it so the file hash is not known, this is not a serious hurdle. More importantly, it means the proverbial Patient Zero who opens the file and enables macros is infected.
 
-Check Point takes this a step further. In addition to blocking a file that is known to be bad by a signature/file hash and emualting the file to see if it's bad, the file is actually **held** while it is emulated. If the file is determined to be malicious, the file is not delivered to the end user, and appropriate indicators are delivered to ThreatCloud so others can benefit. 
+Check Point takes this a step further. In addition to blocking a file that is known to be bad by a signature/file hash and emulating the file to see if it's bad, the file is actually **held** while it is emulated. If the file is determined to be malicious, the file is not delivered to the end user, and appropriate indicators are delivered to ThreatCloud so others can benefit. 
 
 While the file is being emulated, Check Point can also provide a reconstructed file to the end user that contains no macros. This is what Check Point calls Threat Extraction. In fact, I experienced this today when I received an email from a customer containing a Word Document. The email contained the following warning:
 
