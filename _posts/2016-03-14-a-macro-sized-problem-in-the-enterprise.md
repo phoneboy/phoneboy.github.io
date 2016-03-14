@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Macro-Sized Problems In The Enterprise"
+title: "A Macro-Sized Problem In The Enterprise"
 date: 2016-03-14 21:55:00 -08:00
 # modified: 2014-12-24
 type: post
