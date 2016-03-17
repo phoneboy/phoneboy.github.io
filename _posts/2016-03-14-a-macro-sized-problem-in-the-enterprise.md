@@ -25,7 +25,7 @@ Microsoft disables Macros by default when you open documents in current versions
 <center><img src="/images/wordpwn.jpg"></center>
 <center><img src="/images/wordpwn2.jpg"></center>
 
-Despite these very sketchy looking documents, **people actually disable macros** and before you know it, their system is infected with malware and you have a potential problem on your hands.
+Despite these very sketchy looking documents, **people actually enable macros** and before you know it, their system is infected with malware and you have a potential problem on your hands.
 
 Is this really how it plays out? It depends on what other controls you have in your environment.
 
