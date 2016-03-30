@@ -4,7 +4,7 @@ title: "Why Check Point Security Management Is Still The Gold Standard"
 date: 2016-03-29 21:00:00 -08:00
 # modified: 2014-12-24
 type: post
-published: true
+published: false
 status: draft
 permalink: 
 categories: []
