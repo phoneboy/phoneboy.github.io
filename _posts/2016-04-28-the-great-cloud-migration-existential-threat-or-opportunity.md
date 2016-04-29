@@ -36,7 +36,7 @@ If you’re not treating your “cloud” infrastructure in an automated fashion
 
 There was a time when security people were siloed off from other parts of the organization. Security only got brought in at the end to make it all work and is often the scapegoat when it doesn’t work (or things get hacked). If we’re going to be one step ahead of the threats, this practice has to end. Security people have to be part of the conversation as applications and services are being conceived, or in the case of software as a service, being migrated to. Likewise, security people have to figure out how to stop being a business impediment, but being a [business enabler](http://phoneboy.org/2014/11/23/the-department-of-yes/).
 
-It also means, if you're a security person not versed in the ways of infrastructure or software as a service, if you want to remain relevant, you need to bring your skills and knowldege up to scratch, and quickly.
+It also means, if you're a security person not versed in the ways of infrastructure or software as a service, if you want to remain relevant, you need to bring your skills and knowledge up to scratch, and quickly.
 
 One could look at all of this movement to cloud as a threat to your career. If everything can be automatically deployed, do we need IT or Information Security professionals anymore?
 
