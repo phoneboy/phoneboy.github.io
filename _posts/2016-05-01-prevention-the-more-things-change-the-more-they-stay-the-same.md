@@ -28,4 +28,4 @@ The "old school" message is still there because, fundamentally, the problems we 
 
 [It's not now, nor ever has been, an either-or proposition](http://phoneboy.org/2016/01/28/prevention-vs-detection-its-not-either-or/) when it comes to detection versus prevention. You must do both and you must do both well if you're going to stay one step ahead. Even organizations who employ predominately "fast detection and remediation" solutions still, for the most part, have traditional security controls in place. Clearly, [a bank in Bangladesh](http://www.bbc.com/news/technology-36110421) could have used a little more of both.
 
-While I wasn't lucky enough to go to CPX in Nice, France, I will get a chance to go when it hits Chicago in a couple of weeks and hear for myself what Gil Shwed has to say. Will you be there?
+While I wasn't lucky enough to go to CPX in Nice, France, I will get a chance to go when it hits Chicago in a couple of weeks and hear for myself what Gil Shwed has to say. [Will you be there](http://www.checkpoint.com/resources/cpx-2016/usa/index.html)?
