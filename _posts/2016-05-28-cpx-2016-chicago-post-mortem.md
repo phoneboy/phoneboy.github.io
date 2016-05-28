@@ -23,7 +23,7 @@ It's been a few years since I've been able to attend Check Point Experience (CPX
 <center><img src="/images/cpx2016-phoneboy-badge.jpg"></center>
 <center><i>Yes, I managed to get the registration folks to print PhoneBoy on my badge</i></center>
 
-CPX runs for two days and has a combination of general sessions and smaller, more focused sessions convering individual products and services. A handful of customers also schedule one-on-ones with Check Point executives. There is also an expo floor where vendors have booths demonstrating their products and services. Check Point had a few booths for its various product and services offering, and yes, I had to stand at a couple of them to do my part for the cause. 
+CPX runs for two days and has a combination of general sessions and smaller, more focused sessions covering individual products and services. A handful of customers also schedule one-on-ones with Check Point executives. There is also an expo floor where vendors have booths demonstrating their products and services. Check Point had a few booths for its various product and services offering, and yes, I had to stand at a couple of them to do my part for the cause. 
 
 While I always enjoy hearing what the Check Point executives have to say, the reality is, as a Check Point employee, I've heard a bit about what they had to say at our Sales Kick Off earlier this year. I was more interested in the other speakers at the general sessions, which at CPX, included a congressman, a futurist, and customers. 
 
@@ -39,7 +39,7 @@ One of my favorite sessions was from [Daniel Burrus](https://www.linkedin.com/in
 
 The Pathways to Innovation in the above slide were originally written in 1985. They haven't changed. My favorite insight from his presentation? Rather than complaining about government regulations (a hard trend), look for the opportunities they present. They're there. 
 
-And, of course, there's Moti Sagey. I always enjoy his Sales Kick Off presentations about the competition and his CPX presentation did not disappoint. Even though he is part of Check Point's marketing organization, his presentations are low on fluff and high on facts, with plenty of humor. 
+And, of course, there's [Moti Sagey](https://il.linkedin.com/in/motisagey). I always enjoy his Sales Kick Off presentations about the competition and his CPX presentation did not disappoint. Even though he is part of Check Point's marketing organization, his presentations are low on fluff and high on facts, with plenty of humor. 
 
 <center><img src="/images/cpx2016-moti.jpg"></center>
 
@@ -53,7 +53,7 @@ Another company involving former Check Point employees is GuardiCore, which has 
 
 <center><img src="/images/cpx2016-phoneboy-guardicore.jpg"></center>
 
-[Indeni](http://www.indent.com) is a tool that monitors security devices like Check Point to, in their words, "power smarter networks through machine learning and predictive analysis technology, enabling companies to focus on growth acceleration rather than network failures." They gave out happy face shirts--who can be unhappy wearing a happy face shirt?--and let you shoot nerf guns at their booth. Looks easier than it is.
+[Indeni](http://www.indent.com) is a tool that monitors security devices like Check Point to, in their words, "power smarter networks through machine learning and predictive analysis technology, enabling companies to focus on growth acceleration rather than network failures." They gave out happy face shirts--who can be unhappy wearing a happy face shirt?--and let you shoot Nerf guns at their booth. Looks easier than it is.
 
 <center><img src="/images/cpx2016-phoneboy-indeni.jpg"></center>
 
