@@ -63,6 +63,6 @@ One other notable company was [Avanan](http://www.avanan.com/). They are a cloud
 
 There was a lot more to unpack from those two days in Chicago but that's enough to give you a taste. If you use (or sell) Check Point products, I highly recommend attending next year to find out how Check Point and partners can keep you one step ahead of the threats.
 
-**Edited to add**: I got Lior Neudorfer's title wrong, he's a Product Manager at Guardicore, not CEO. I also linked to a Medium post about their product.
+**Edited to add**: I got Lior Neudorfer's title wrong, he's a Product Manager at Guardicore, not CEO. I also added a link to a Medium post about the product they showed me at CPX.
 
 **Disclaimer**: If it's not clear from the above, I work for Check Point. Hopefully it's clear these are my opinions and Check Point's official opinions may differ. 
