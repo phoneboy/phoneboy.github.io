@@ -53,7 +53,7 @@ Another company involving former Check Point employees is GuardiCore, which has 
 
 <center><img src="/images/cpx2016-phoneboy-guardicore.jpg"></center>
 
-[Indeni](http://www.indent.com) is a tool that monitors security devices like Check Point to, in their words, "power smarter networks through machine learning and predictive analysis technology, enabling companies to focus on growth acceleration rather than network failures." They gave out happy face shirts--who can be unhappy wearing a happy face shirt?--and let you shoot Nerf guns at their booth. Looks easier than it is.
+[Indeni](http://www.indeni.com) is a tool that monitors security devices like Check Point to, in their words, "power smarter networks through machine learning and predictive analysis technology, enabling companies to focus on growth acceleration rather than network failures." They gave out happy face shirts--who can be unhappy wearing a happy face shirt?--and let you shoot Nerf guns at their booth. Looks easier than it is.
 
 <center><img src="/images/cpx2016-phoneboy-indeni.jpg"></center>
 
