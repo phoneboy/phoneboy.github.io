@@ -49,7 +49,7 @@ There were a few tracks of breakout sessions, which I have to admit I did not at
 
 Over the 23 year history of Check Point, a lot of former employees have gone on to start their own companies or work for companies started by former Check Point employees. One of the newer entrants in this space that had a booth at our expo was a company called [Fireglass](https://fire.glass/), which basically takes all of the code that runs in a browser and runs it somewhere else, exposing only visuals to an end user. It can also use Check Point's SandBlast technology to handle file downloads, reducing the risk of zero-day malware entering the end user workstation. It's extremely clever.
 
-Another company involving former Check Point employees is GuardiCore, which has a clever solution for figuring out the traffic flows inside your virtualized environment so you can perform appropriate microsegmentation with vSEC. It can also identify rogue traffic flows--also a useful feature. CEO [Lior Neudorfer](https://twitter.com/liorus) snapped a photo with me:
+Another company involving former Check Point employees is GuardiCore, which has a clever solution for figuring out the traffic flows inside your virtualized environment so you can perform appropriate microsegmentation with vSEC. It can also identify rogue traffic flows--also a useful feature. For a bit more, check put [Micro-Segmentation, the right way](https://medium.com/@liorus/micro-segmentation-the-right-way-19636e831c8e). Also Product Manager [Lior Neudorfer](https://twitter.com/liorus) snapped a photo with me:
 
 <center><img src="/images/cpx2016-phoneboy-guardicore.jpg"></center>
 
@@ -62,5 +62,7 @@ One other notable company was [Avanan](http://www.avanan.com/). They are a cloud
 <center><img src="/images/avanan-cp.png"></center>
 
 There was a lot more to unpack from those two days in Chicago but that's enough to give you a taste. If you use (or sell) Check Point products, I highly recommend attending next year to find out how Check Point and partners can keep you one step ahead of the threats.
+
+**Edited to add**: I got Lior Neudorfer's title wrong, he's a Product Manager at Guardicore, not CEO. I also linked to a Medium post about their product.
 
 **Disclaimer**: If it's not clear from the above, I work for Check Point. Hopefully it's clear these are my opinions and Check Point's official opinions may differ. 
