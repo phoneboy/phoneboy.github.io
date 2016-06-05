@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "​Infosec-Related Insights From Flash Foresight"
-date: 2016-06-05 23:00:00 -07:00
+date: 2016-06-04 23:00:00 -07:00
 # modified: 2014-12-24
 type: post
 published: true
