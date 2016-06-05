@@ -27,6 +27,7 @@ Depending on how quick you read, you may be able to knock it out in an evening o
 ## Walking Through the Seven Flash Foresight Principles
 
 Daniel Burrus breaks down the process of Flash Foresight into seven principles. The application of one or more of these principles can be used to solve a variety of challenges. Surely, they can help us in infosec, no?
+
 The first place to start: certainty. Specifically, what you know. That is largely reflected by trends:
 
 <center><img src="/images/hard-soft-trends.jpg"></center>
