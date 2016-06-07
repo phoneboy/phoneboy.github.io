@@ -22,13 +22,13 @@ image:
 ---
 ​One of the things I did not expect to get out of the recent Check Point Experience conference was: a book to read. That's exactly what happened when, due to an encounter with Flash Foresight author Daniel Burris on Twitter, a book showed up on my doorstep.
 
-The Twitter encounter happened because Daniel Burrus spoke at Check Point Experience and I tweeted a few photos from his talk. Though he had about a half an hour slot, I could have listened to him for hours. Many of his insights could easily apply to the field of information security. In fact, plenty of the trends he discusses have immediate implications to the field.
+The Twitter encounter happened because Daniel Burris spoke at Check Point Experience and I tweeted a few photos from his talk. Though he had about a half an hour slot, I could have listened to him for hours. Many of his insights could easily apply to the field of information security. In fact, plenty of the trends he discusses have immediate implications to the field.
 
 Depending on how quick you read, you may be able to knock it out in an evening or two. This book is definitely a recommended read. Unlike many "business" books I've read, this was an easy read and found it to immediately resonate with my own experiences. I also found it to be very optimistic. Specifically, the problems we have today will be solved. The question is, by whom and how? If you apply some of the principles of Flash Foresight, maybe it could be you?
 
 ## Walking Through the Seven Flash Foresight Principles
 
-Daniel Burrus breaks down the process of Flash Foresight into seven principles. The application of one or more of these principles can be used to solve a variety of challenges. Surely, they can help us in infosec, no?
+Daniel Burris breaks down the process of Flash Foresight into seven principles. The application of one or more of these principles can be used to solve a variety of challenges. Surely, they can help us in infosec, no?
 
 The first place to start: certainty. Specifically, what you know. That is largely reflected by trends:
 
