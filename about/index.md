@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About the Jekyll Theme
+title: About PhoneBoy
 image:
   feature: abstract-5.jpg
   credit: dargadgetz
@@ -8,27 +8,69 @@ image:
 comments: false
 modified: 2014-12-24
 ---
+Dameon D. Welch-Abernathy, widely known as “PhoneBoy”, is a Security
+Architect for [Check Point Software Technologies][1]. He provides security
+architecture design and consults on product integration for Check Point’s
+Sales teams worldwide.  
 
-They say three times the charm, so here is another free responsive Jekyll blog theme for you. I've learned a ton since open sourcing my first two themes [on Github](http://github.com/mmistakes), and wanted to try a few new things this time around. 
+A recognized industry security veteran, with two decades of experience,
+Welch-Abernathy is best known for his creation of the *PhoneBoy FireWall-1
+FAQ* in the mid-1990s. It was used by Check Point and thousands of its
+customers worldwide. He is also the author of *Essential Check Point
+FireWall-1 NG: An Installation, Configuration, and Troubleshooting Guide*.
+A well-known author in the blog sphere, he is a trusted security authority.  
 
-If you've used any of [my other themes](http://mademistakes.com/work/jekyll-themes/) most of this should be familiar territory...
+Prior to joining Check Point through the acquisition of Nokia’s security
+appliance business, Welch-Abernathy worked in Product Line Support where
+the supported customers using a variety of security solutions developed
+by Nokia, Check Point, and Sourcefire. He has also worked as a systems
+administrator for several small companies.
 
-## What HPSTR brings to the table:
+Welch-Abernathy holds a B.S. in Computer Science from Santa Clara
+University and is a current Certified Information Systems Security
+Professional (CISSP).
 
-* Responsive templates for post, page, and post index `_layouts`. Looks great on mobile, tablet, and desktop devices.
-* Gracefully degrads in older browsers. Compatible with Internet Explorer 8+ and all modern browsers.  
-* Modern and minimal design.
-* Sweet animated menu.
-* Background image support.
-* Readable typography to make your words shine.
-* Support for large images to call out your favorite posts.
-* Built-in support for Sass courtesy of Jekyll 2.x.
-* Optional [Disqus](http://disqus.com) comments.
-* Simple and clear permalink structure[^1].
-* [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) support for a better social sharing experience.
-* Simple [custom 404 page]({{ site.url }}/404.html) to get you started.
-* Stylesheets for Pygments and Coderay [syntax highlighting]({{ site.url }}/code-highlighting-post/) to make your code examples look snazzy.
+**Where Did The Name PhoneBoy Come From?**
+The name PhoneBoy was given to Welch-Abernathy by one of the hosts of
+[Radionet Talk Radio][11], a radio show he used to work on in 1996 as a
+call screener. The host forgot his name one day and called him the phone
+boy just to call him something.
 
-<div markdown="0"><a href="{{ site.url }}/theme-setup/" class="btn btn-info">Theme Setup</a> <a href="https://github.com/mmistakes/hpstr-jekyll-theme" class="btn btn-success">Download HPSTR</a></div>
+“[The host] is never going to let this name go,” Welch-Abernathy thought,
+“so I might as well embrace it.” 
 
-[^1]: Example: *domain.com/category-name/post-title*
+phoneboy.com was registered and the rest was history.
+
+**About This Site**
+On this blog, Welch-Abernathy generally writes on Information Security topics.
+For the subjects of VoIP, Telecom, Gadgets and Technology, check out
+[The PhoneBoy Blog][2]. For everything else PhoneBoy, check out [PhoneBoy Says][3].
+
+**Disclaimer**
+
+Don&#8217;t confuse the views expressed herein with those of Check Point
+Software Technologies, Nokia, or any other employer Welch-Abernathy has
+had or may have in the future. The views here may not even be his!
+
+**Contact Information:**
+
+*   dwelch AT phoneboy DOT com ([PGP Key][4])
+*   +1 650 963 4805
+*   Skype: phoneboy.com
+*   Twitter: <a href="http://www.twitter.com/" rel="homepage">@PhoneBoy</a>
+*   App.Net: [@PhoneBoy][6]
+*   Google+: [Dameon Welch-Abernathy][7]
+*   Facebook: [Dameon D. Welch-Abernathy][8]
+*   LinkedIn: [Dameon Welch-Abernathy][9]
+*   Instagram: [@PhoneBoy][10]
+
+ [1]: http://www.checkpoint.com/
+ [2]: https://phoneboy.com
+ [3]: http://phoneboy.info
+ [4]: https://phoneboy.com/phoneboy.gpg
+ [6]: http://alpha.app.net/phoneboy
+ [7]: https://plus.google.com/107909164261598716820?rel=author
+ [8]: https://www.facebook.com/phoneboy
+ [9]: http://www.linkedin.com/in/phoneboy
+ [10]: http://instagram.com/phoneboy
+ [11]: http://web.archive.org/web/19961228105105/http://www.radionet.com/
