@@ -34,7 +34,7 @@ With Palo Alto Networks, however, it's clearly different. Nir Zuk, the co-founde
 
 ![CHKPKLR](/images/chkpklr.png)
 
-The guy up on stage? Their CEO Mark McLaughlin, propagating the "Check Point Killer" message to the assembled masses. For added effect, I heard a report that the default password for accounts on the mobile application for the SKO event was "cpkiller".
+The guy up on stage? Their CEO Mark McLaughlin, propagating the "Check Point Killer" message to the assembled masses. 
 
 Over the years, I've heard countless stories of how Nir Zuk would come in to talk to a customer and spend a significant amount of time talking about Check Point, to the point where he was thrown out of at least one customer meeting! Given how some customers feel about Check Point, I'm sure that tactic did help to drive some sales.
 
