@@ -34,12 +34,14 @@ With Palo Alto Networks, however, it's clearly different. Nir Zuk, the co-founde
 
 ![CHKPKLR](/images/chkpklr.png)
 
-Speaking of Palo Alto Networks recent Sales Kick Office, I heard a report that the default password for accounts on the mobile application for this event was "cpkiller".
+The guy up on stage? Their CEO Mark McLaughlin, propagating the "Check Point Killer" message to the assembled masses. For added effect, I heard a report that the default password for accounts on the mobile application for the SKO event was "cpkiller".
 
 Over the years, I've heard countless stories of how Nir Zuk would come in to talk to a customer and spend a significant amount of time talking about Check Point, to the point where he was thrown out of at least one customer meeting! Given how some customers feel about Check Point, I'm sure that tactic did help to drive some sales.
 
 ![Gil Shwed is not my friend](/images/gil-shwed-not-my-friend.png)
 
-It's clear to me hatred for Check Point is institutionalized at Palo Alto Networks. It makes me question what business they are truly in. If [paloaltonetworks.security](https://paloaltonetworks.security) doesn't even resolve to their own website, it must not be the security business.
+The guy on stage here? Palo Alto Networks CMO Rene Bonvanie.
+
+It's clear hatred of Check Point is institutionalized at Palo Alto Networks, and it comes straight from the top. It makes me question what business they are truly in. If [paloaltonetworks.security](https://paloaltonetworks.security) doesn't even resolve to their own website, it must not be the security business.
 
 **Disclaimer**: My blog, my personal opinions. I'm sure you knew that.
