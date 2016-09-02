@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Is Past (Security) Performance Indicative of Future Results?"
+title: "​A Word About Competition in the Information Security Industry"
 date: 2016-09-01 23:00:00 -07:00
 # modified: 2014-12-24
 type: post
