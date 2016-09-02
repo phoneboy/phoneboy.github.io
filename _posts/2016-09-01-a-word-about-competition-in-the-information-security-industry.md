@@ -42,6 +42,6 @@ Over the years, I've heard countless stories of how Nir Zuk would come in to tal
 
 The guy on stage here? Palo Alto Networks CMO Rene Bonvanie.
 
-It's clear hatred of Check Point is institutionalized at Palo Alto Networks, and it comes straight from the top. It makes me question what business they are truly in. If [paloaltonetworks.security](https://paloaltonetworks.security) doesn't even resolve to their own website, it must not be the security business.
+It's clear hatred of Check Point is institutionalized at Palo Alto Networks, and it comes straight from the top. It makes me question what business they are truly in. If [paloaltonetworks.security](http://paloaltonetworks.security) doesn't even resolve to their own website, it must not be the security business.
 
 **Disclaimer**: My blog, my personal opinions. I'm sure you knew that.
