@@ -20,8 +20,7 @@ image:
   #credit: speedygroundhog
   #creditlink: https://www.flickr.com/photos/speedygroundhog/
 ---
-​
-The devices, networks, and social institutions we use today are only useful because, on the whole, most people largely trust them. If this trust gets eroded, people will not make use of them. It took me many years of working at Nokia to realize that regardless of what I do in life, I am always going to be looking for ways to improve the security with the ultimate goal of maintaining that trust.
+​The devices, networks, and social institutions we use today are only useful because, on the whole, most people largely trust them. If this trust gets eroded, people will not make use of them. It took me many years of working at Nokia to realize that regardless of what I do in life, I am always going to be looking for ways to improve the security with the ultimate goal of maintaining that trust.
 
 As a company, Check Point firmly believes customers deserve the best security for their digital information. That, plus my long-time history with Check Point was why I ultimately decided to go work for Check Point when they acquired Nokia's Security Appliance Business back in 2009. The talented, smart people I work with day-in and day-out working toward the same goal is why I'm still here even as a few of my friends recently left, for example [Kellman](http://kill-hup.blogspot.ca/2016/07/why-i-left-check-point.html).
 
