@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Get Over Windows Defender Already, AV Vendors!"
-date: 2016-11-09 16:00:00 -08:00
+date: 2016-11-19 16:00:00 -08:00
 # modified: 2014-12-24
 type: post
 published: true
