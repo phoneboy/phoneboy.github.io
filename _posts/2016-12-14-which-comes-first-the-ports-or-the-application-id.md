@@ -38,7 +38,13 @@ Sounds magical. I can now build a security policy based on applications alone wi
 
 Even Palo Alto Network's own documentation says the very first check is based on IP and Port, exactly the way every other vendor does it. You know why? Because that's the only way *to* do it.
 
-If I open a TCP connection to 192.0.2.1 port 80, the first packet sent is a TCP SYN. There's nothing in that packet that will tell me whether it's, say a connection to google.com, a malware site, or whatever. It's probably safe to assume it's web traffic, but without seeing some more packets on the connection, we don't know for sure. A few more packets must be let through on the connection before a determination is made 
+If I open a TCP connection to 192.0.2.1 port 80, the first packet sent is a TCP SYN. Here's what I know from that:
+
+1. It's likely a web-based connection. That said, anything can use port 80, so that's only an assumption.
+2. It could be a connection to google.com, gmail, Google Maps, Google Drive, or any other Google property. Or Office 365 apps. Or something else.
+3. I might be able to do a reverse lookup on the IP to see where it's going, but that adds latency and provides no guarantee the lookup will show you anything that will help identify the app or website. Or tell you if the content being served up is actually safe.
+
+Bottom line: more information is needed. A few more packets must be let through on the connection before we know exactly what it is.
 
 Let's assume for a moment we take the position that we don't care about ports at all, only applications, as I often hear Palo Alto Networks reps say. What can happen? First of all, you can do reconnaissance on anything beyond the firewall. If you do this rapidly, you'll probably trigger the various protections in place to detect port scanning and similar activity, but it could easily be done in a "low and slow" manner that these detections probably won't trigger. 
 
@@ -70,6 +76,8 @@ It's also why the number of applications a particular solution can identify matt
 
 In this case, the Security Checkup appliance was positioned outside of a Palo Alto Networks gateway filtering traffic. The report from which this snapshot was taken ran in February 2016. You can see that Gom VPN and Betternet are clearly being allowed by the amount of traffic compared to some of the other ones, which are clearly being blocked due to the limited amount of traffic. I checked [Applipedia](https://applipedia.paloaltonetworks.com/) and these anonymizers are *still* not supported (as of 11th December 2016, at least).
 
-Clearly being able to detect more applications is better, even if you employ a whitelisting approach. And, as noted before, this will be easier to implement with the Check Point R80.10 release.
+It's also worth noting that a whitelist approach has a bit more administrative overhead and only works when the applications you want to allow are defined. 
+
+Clearly being able to detect more applications is better, even if you employ a whitelisting approach, which can have a bit more administrative overhead. Even then, it will only work when the applications you want to allow are defined. Thus again, more is better. And, as noted before, this whitelist strategy will be easier to implement in the Check Point R80.10 release.
 
 **Disclaimer**: My employer, [Check Point Software Technologies](https://www.checkpoint.com), is always trying to stay one step ahead of the threats as well as the competition. The views above, however, are my own. 
