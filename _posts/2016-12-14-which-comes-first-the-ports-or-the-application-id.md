@@ -26,7 +26,7 @@ For some applications, the act of opening up ports was complicated because the p
 
 And then web-based applications became a thing. Now, if you're allowing web traffic with no further classification, you might as well have an open firewall, because for all intents and purposes, it is. Even a single IP can host many different websites (some good, some now). And, of course, the content of a "good" website could also be "bad" at times. This created a clear need to control based not only on ports and IPs, but on other elements.
 
-Enter Palo Alto Networks, who in 2007 released the first version of their product that is built around applications versus IP and ports. To be clear, this wasn't a new concept as firewalls have been doing this in some capacity for years. Clearly, this resonated with customers, they gained market share, and other vendors started implementing similar technology.
+Enter Palo Alto Networks, who in 2007 released the first version of their product that is built around applications versus IP and ports. To be clear, this wasn't a new concept as firewalls have been doing this in some capacity for years. However, Palo Alto's approach resonated with customers, they gained market share, and other vendors started implementing similar technology.
 
 The technology that Palo Alto Networks developed is called App-ID and they explain it as follows in their [APP-ID Tech Brief](https://www.paloaltonetworks.com/resources/techbriefs/app-id-tech-brief):
 
