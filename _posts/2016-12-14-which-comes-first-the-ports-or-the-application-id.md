@@ -24,7 +24,7 @@ Back when I started working with the Check Point product in 1996, things were mu
 
 For some applications, the act of opening up ports was complicated because the ports were determined dynamically. A good example of a classic protocol that does this is FTP. There were others, of course, but this was common back in the 1990s and is still used today. Check Point (and other vendors) had to have intelligence built into their product to account for FTP and a number of other protocols. 
 
-And then web-based applications became a thing. Now, if you're allowing web traffic with no further classification, you might as well have an open firewall, because for all intents and purposes, it is. Even a single IP can host many different websites (some good, some now). And, of course, the content of a "good" website could also be "bad" at times. This created a clear need to control based not only on ports and IPs, but on other elements.
+And then web-based applications became a thing. Now, if you're allowing web traffic with no further classification, you might as well have an open firewall, because for all intents and purposes, it is. Even a single IP can host many different websites (some good, some not). And, of course, the content of a "good" website could also be "bad" at times. This created a clear need to control based not only on ports and IPs, but on other elements.
 
 Enter Palo Alto Networks, who in 2007 released the first version of their product that is built around applications versus IP and ports. To be clear, this wasn't a new concept as firewalls have been doing this in some capacity for years. However, Palo Alto's approach resonated with customers, they gained market share, and other vendors started implementing similar technology.
 
@@ -41,7 +41,7 @@ Even Palo Alto Network's own documentation says the very first check is based on
 If I open a TCP connection to 192.0.2.1 port 80, the first packet sent is a TCP SYN. Here's what I know from that:
 
 1. It's likely a web-based connection. That said, anything can use port 80, so that's only an assumption.
-2. It could be a connection to google.com, gmail, Google Maps, Google Drive, or any other Google property. Or Office 365 apps. Or something else.
+2. It could be a connection to do a Google search, gmail, Google Maps, Google Drive, or any other Google property. Or Office 365 apps. Or something else.
 3. I might be able to do a reverse lookup on the IP to see where it's going, but that adds latency and provides no guarantee the lookup will show you anything that will help identify the app or website. Or tell you if the content being served up is actually safe.
 
 Bottom line: more information is needed. A few more packets must be let through on the connection before we know exactly what it is.
