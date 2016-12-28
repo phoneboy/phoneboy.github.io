@@ -9,9 +9,10 @@ comments: false
 modified: 2014-12-24
 ---
 Dameon D. Welch-Abernathy, widely known as “PhoneBoy”, is a Security
-Architect for [Check Point Software Technologies][1]. He provides security
-architecture design and consults on product integration for Check Point’s
-Sales teams worldwide.  
+Architect for [Check Point Software Technologies][1] where he reviews
+customer security architecture, deployment, design, and related processes
+to identify security gaps and define strategies for improving security
+posture and lower operational costs. 
 
 A recognized industry security veteran, with two decades of experience,
 Welch-Abernathy is best known for his creation of the *PhoneBoy FireWall-1
@@ -19,12 +20,6 @@ FAQ* in the mid-1990s. It was used by Check Point and thousands of its
 customers worldwide. He is also the author of *Essential Check Point
 FireWall-1 NG: An Installation, Configuration, and Troubleshooting Guide*.
 A well-known author in the blog sphere, he is a trusted security authority.  
-
-Prior to joining Check Point through the acquisition of Nokia’s security
-appliance business, Welch-Abernathy worked in Product Line Support where
-the supported customers using a variety of security solutions developed
-by Nokia, Check Point, and Sourcefire. He has also worked as a systems
-administrator for several small companies.
 
 Welch-Abernathy holds a B.S. in Computer Science from Santa Clara
 University and is a current Certified Information Systems Security
@@ -57,18 +52,16 @@ had or may have in the future. The views here may not even be his!
 *   dwelch AT phoneboy DOT com ([PGP Key][4])
 *   +1 650 963 4805
 *   Skype: phoneboy.com
+*   LinkedIn: [Dameon Welch-Abernathy][9]
 *   Twitter: <a href="http://www.twitter.com/" rel="homepage">@PhoneBoy</a>
-*   App.Net: [@PhoneBoy][6]
 *   Google+: [Dameon Welch-Abernathy][7]
 *   Facebook: [Dameon D. Welch-Abernathy][8]
-*   LinkedIn: [Dameon Welch-Abernathy][9]
 *   Instagram: [@PhoneBoy][10]
 
  [1]: http://www.checkpoint.com/
  [2]: https://phoneboy.com
  [3]: http://phoneboy.info
  [4]: https://phoneboy.com/phoneboy.gpg
- [6]: http://alpha.app.net/phoneboy
  [7]: https://plus.google.com/107909164261598716820?rel=author
  [8]: https://www.facebook.com/phoneboy
  [9]: http://www.linkedin.com/in/phoneboy
