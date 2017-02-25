@@ -28,7 +28,7 @@ The advice that is given as a result of this bug?
 >
 > Theoretically sites not in this list can also be affected (because an affected site could have made an API request to a non-affected one), you should probably change all your important passwords.
 
-Which is fine if, like me, you actually use a password manager ([I recommend LastPass](https://lastpass.com)). However, it's not entirely complete advice as "HTTP cookies, authentication tokens, HTTP POST bodies, and other sensitive data" were leaked. Changing passwords won't suddenly fix this disclosure issue, particularly if the sites in question do a poor job invalidaing cookies and tokens. Think that's far fetched? [Think again](http://bgr.com/2017/02/16/yahoo-says-hackers-breached-your-account-in-new-attack-without-stealing-your-password/).
+Which is fine if, like me, you actually use a password manager ([I recommend LastPass](https://lastpass.com)). However, it's not entirely complete advice as "HTTP cookies, authentication tokens, HTTP POST bodies, and other sensitive data" were leaked. Changing passwords won't suddenly fix this disclosure issue, particularly if the sites in question do a poor job invalidating cookies and tokens. Think that's far fetched? [Think again](http://bgr.com/2017/02/16/yahoo-says-hackers-breached-your-account-in-new-attack-without-stealing-your-password/).
 
 Changing passwords also doesn't fix applications that may have communicated on the backend to a CloudFlare-backed site (either on your behalf or otherwise). The potential scope of this issue is...scary.
 
