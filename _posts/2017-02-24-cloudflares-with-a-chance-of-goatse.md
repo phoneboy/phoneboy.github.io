@@ -20,7 +20,7 @@ image:
   credit: kc green
   creditlink: http://gunshowcomic.com/648
 ---
-As I'm sure you've heard by now, [CloudFlare](https://www.cloudflare.com) had a case of [CloudBleed](https://blog.cloudflare.com/incident-report-on-memory-leak-caused-by-cloudflare-parser-bug/), causing what amounts to a massive privacy violation for *any* site that happened to use them. Specifically, they had to be using CloudFlare with one of three specific features enabled: Email Obfuscation, Server-side Excludes, and Automatic HTTPS Rewrites. A [potential list of compromised sites](https://github.com/pirate/sites-using-cloudflare/blob/master/README.md) showed up, which may not be entirely accurate because plenty of sites use CloudFlare but may not necessarily use these features.
+As I'm sure you've heard by now, [CloudFlare](https://www.cloudflare.com) had a case of [CloudBleed](https://blog.cloudflare.com/incident-report-on-memory-leak-caused-by-cloudflare-parser-bug/), causing what amounts to a massive privacy violation for *any* site that happened to use them, at least if they used one of three specific features of CloudFlare: Email Obfuscation, Server-side Excludes, and Automatic HTTPS Rewrites. A [potential list of compromised sites](https://github.com/pirate/sites-using-cloudflare/blob/master/README.md) showed up, which may not be entirely accurate because plenty of sites use CloudFlare but may not necessarily use these features.
 
 The advice that is given as a result of this bug?
 
