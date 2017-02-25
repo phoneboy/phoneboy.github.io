@@ -6,7 +6,7 @@ date: 2017-02-24 17:00:00 -08:00
 type: post
 published: true
 status: published
-permalink: 
+# permalink: 
 categories: []
 tags: []
 author:
