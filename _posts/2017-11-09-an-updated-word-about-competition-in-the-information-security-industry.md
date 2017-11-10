@@ -13,19 +13,20 @@ author:
   login: phoneboy
   email: dwelch@phoneboy.com
   display_name: Dameon Welch-Abernathy
-#redirect_from:
-#  - /2016/06/05/good-password-hygiene-key-to-protecting-social-media-accounts/
+redirect_from:
+  - /2016/09/01/a-word-about-competition-in-the-information-security-industry/
 image:
   feature: KillSquadBanner.png
   #credit: speedygroundhog
   #creditlink: https://www.flickr.com/photos/speedygroundhog/
 ---
-A year ago, I had written a post about [competition in the information
-security space](http://phoneboy.org/2016/09/01/a-word-about-competition-in-the-information-security-industry/), of which I work as a part of for a vendor
-that has been in it for nearly a quarter century: Check Point Software
-Technologies. A few things have changed since I wrote the post and I decided,
-rather than merely repost my previous post, create a new version of it and
-update with some relevant information.
+A year ago, I had written a post about competition in the information
+security space, of which I work as a part of for a vendor that has been
+in it for nearly a quarter century: Check Point Software Technologies. A
+few things have changed since I wrote the post and I decided, rather than
+merely repost my previous post, create a new version of it and update with
+some relevant information. I've removed the old post because it largely
+says the same thing.
 
 ## Why I'm In This Industry
 
