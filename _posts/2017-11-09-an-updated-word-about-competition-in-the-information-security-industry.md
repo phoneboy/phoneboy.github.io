@@ -43,7 +43,7 @@ was why I ultimately decided to go work for Check Point when they acquired
 Nokia's Security Appliance Business back in 2009. The talented, smart people
 I work with day-in and day-out working toward the same goal is why I'm still
 here, even though some have left for what they see as greener pastures, or
-at the very least, a diferent pasture.
+at the very least, a different pasture.
 
 ## What About The Competition
 
