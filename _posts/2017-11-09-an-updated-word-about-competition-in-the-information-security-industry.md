@@ -56,14 +56,14 @@ Check Point's user community: [CheckMates](https://community.checkpoint.com).
 You may have noticed that I occasionally delve into the subject of Check
 Point's competition in my online discourse. The main reason I do this is
 because some of them are saying stuff that flat out isn't true, a gross
-gross misrepesentation, or advocates a bad approach.
+misrepesentation, or they advocate a poor approach.
 
 To be clear, I think healthy competition is a good thing. It raises all
 boats, regardless of who you ultimately use. Despite our differences in
-approach, all infosec competition has a common enemy: the malicious
-actors who attempt to penetrate and disrupt our customers networks. We
-would do better as an industry to remember that and work better together
-toward defeating that common enemy.
+approach, there is a common enemy: the malicious actors who attempt to
+penetrate and disrupt our customers networks. We would do better as an
+industry to remember that and work better together toward defeating
+that common enemy.
 
 Despite that common goal, everyone who works for a security vendor,
 particularly in a sales or marketing capacity, wants to succeed over
