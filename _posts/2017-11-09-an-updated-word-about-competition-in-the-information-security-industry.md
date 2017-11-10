@@ -13,8 +13,7 @@ author:
   login: phoneboy
   email: dwelch@phoneboy.com
   display_name: Dameon Welch-Abernathy
-redirect_from:
-  - /2016/09/01/a-word-about-competition-in-the-information-security-industry
+redirect_from: "/2016/09/01/a-word-about-competition-in-the-information-security-industry/"
 image:
   feature: KillSquadBanner.png
   #credit: speedygroundhog
