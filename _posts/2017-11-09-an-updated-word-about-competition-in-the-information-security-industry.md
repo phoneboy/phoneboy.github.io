@@ -104,9 +104,9 @@ Gil Shwed:
 To take it one step further, it was recently discovered that Palo
 Alto Networks has a so-called "Check Point Kill Squad." This was disclosed
 by way of a screenshot of what appeared to be an internal portal from
-Palo Alto Networks. There was no real information in this screenshot,
-Partial bullet points of a few competitive talking points against
-Check Point Sandblast and the fact they also have a Competitive team--nothing
+Palo Alto Networks. There was no real information in this screenshot, just
+partial bullet points of a few competitive talking points against
+Check Point SandBlast and the fact they also have a Competitive team--nothing
 that wasn't already widely known or easily to deduce. 
 
 Rather than simply ignore it, Palo Alto Networks saw fit to issue a DMCA
