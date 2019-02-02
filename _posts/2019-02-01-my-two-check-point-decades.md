@@ -113,7 +113,7 @@ to the actual sales process.
 
 Then, at the end of 2016, I was offered an interesting proposal that leads
 me where I'm at now at Check Point: as the front man for Check Point's user
-community: [CheckMates](https;//community.checkpoint.com). The funny thing
+community: [CheckMates](https://community.checkpoint.com). The funny thing
 is, I'm doing a lot of what I was doing running the FireWall-1 FAQ back in
 the 1990s, except Check Point is now paying me to do it.
 
