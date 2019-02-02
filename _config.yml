@@ -8,6 +8,8 @@ logo:             everyones-a-target.png
 # When testing locally leave blank or use http://localhost:4000
 url:              http://phoneboy.org
 
+gems: [jekyll-paginate]
+
 # Owner/author information
 owner:
   name:           Dameon D. Welch-Abernathy
@@ -40,7 +42,7 @@ timezone:    America/Los_Angeles
 future:      true
 highlighter: rouge
 markdown:    kramdown
-gems:
+plugins_dir:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-paginate
