@@ -15,8 +15,8 @@ author:
   display_name: Dameon Welch-Abernathy
 image:
   feature: checkpointcom199703.png
-  #credit: speedygroundhog
-  #creditlink: https://www.flickr.com/photos/speedygroundhog/
+  credit: Internet Wayback Machine
+  creditlink: http://web.archive.org/web/19970328191806/http://www.checkpoint.com/
 ---
 February 1999 was the last time I willingly changed employers. That's...20
 years, which, in this day and age, is an eternity to stick with the same
