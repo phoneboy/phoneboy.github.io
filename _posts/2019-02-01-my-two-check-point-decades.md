@@ -109,6 +109,8 @@ to the actual sales process.
 
 ## Back to the Future
 
+![CheckMates](/images/CheckMates_1280x331.png)
+
 Then, at the end of 2016, I was offered an interesting proposal that leads
 me where I'm at now at Check Point: as the front man for Check Point's user
 community: [CheckMates](https;//community.checkpoint.com). The funny thing
