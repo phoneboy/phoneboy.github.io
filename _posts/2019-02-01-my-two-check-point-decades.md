@@ -97,7 +97,7 @@ began as this was not only a change in employer for me, I changed jobs. Which,
 as it turns out, was a great thing. 
 
 At first, my job wasn't all that different. I was a sort of backline support
-for the sales orgnaization, interfacing between sales, R&D, and Product
+for the sales organization, interfacing between sales, R&D, and Product
 Management. It wasn't too different from what I was doing at Nokia, actually,
 just with a different focus (pre-sales).
 
