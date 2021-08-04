@@ -46,9 +46,9 @@ I'm reminded of Daniel Burrus' book Flash Foresight, something I
 [wrote about in 2016](http://phoneboy.org/2016/06/04/infosec-related-insights-from-flash-foresight/). Specifically, I'm reminded of his concept of
 Hard Trends, and three we're all living with:
 
-    * Ever Increasing Connectivity
-    * Ever Increasing Processing Power
-    * Ever Increasing Storage
+* Ever Increasing Connectivity
+* Ever Increasing Processing Power
+* Ever Increasing Storage
  
 This is both a challenge and an opportunity: both for us as consumers
 and for the malicious actors out there who exploit this. Is it any
