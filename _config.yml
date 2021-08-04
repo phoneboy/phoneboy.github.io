@@ -26,7 +26,7 @@ owner:
   flickr:         phoneboy
   tumblr:         phoneboy
   # google plus id, include the '+', eg +mmistakes
-  google_plus:    +DameonWelchAbernathyAKAPhoneBoy
+  #google_plus:    +DameonWelchAbernathyAKAPhoneBoy
 
 # Background image to be tiled on all pages
 background: 
