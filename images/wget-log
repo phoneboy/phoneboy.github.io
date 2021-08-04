@@ -1,11 +1,0 @@
---2021-08-03 22:15:18--  https://s1.qwant.com/thumbr/0x380/a/2/7e11e1ace619b6ab21eee6183e88129fe391cdb77dddc852f32f8a2ad4aaba/Back-to-the-Future.jpg?u=http%3A%2F%2Fwww.scottcochrane.com%2Fwp-content%2Fuploads%2F2016%2F07%2FBack-to-the-Future.jpg
-Resolving s1.qwant.com (s1.qwant.com)... 194.187.168.115
-Connecting to s1.qwant.com (s1.qwant.com)|194.187.168.115|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [image/jpeg]
-Saving to: ‘Back-to-the-Future.jpg?u=http:%2F%2Fwww.scottcochrane.com%2Fwp-content%2Fuploads%2F2016%2F07%2FBack-to-the-Future.jpg’
-
-          Back-to-t     [<=>                 ]       0  --.-KB/s               Back-to-the-Future.     [ <=>                ]  20.69K  --.-KB/s    in 0s      
-
-2021-08-03 22:15:19 (53.5 MB/s) - ‘Back-to-the-Future.jpg?u=http:%2F%2Fwww.scottcochrane.com%2Fwp-content%2Fuploads%2F2016%2F07%2FBack-to-the-Future.jpg’ saved [21186]
-
