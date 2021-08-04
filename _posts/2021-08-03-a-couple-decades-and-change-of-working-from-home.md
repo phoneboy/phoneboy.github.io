@@ -16,7 +16,7 @@ author:
   first_name: ''
   last_name: ''
 image:
-  feature: Back-to-the-Future.jpg
+  feature: Back-to-the-Future.jpeg
 ---
 
 When the Covid-19 pandemic was declared in March of 2020 and most every
