@@ -11,7 +11,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 ---
 From [Exclusive: The OPM breach details you haven't seen](http://fcw.com/articles/2015/08/21/opm-breach-timeline.aspx):
 

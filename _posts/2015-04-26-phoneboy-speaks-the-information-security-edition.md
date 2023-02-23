@@ -11,7 +11,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 ---
 While it's not always a focus area of my [PhoneBoy Speaks](https://phoneboy.com/ps/) podcast, I do occasionally cover Information Security topics on my podcast. It happens often enough that I decided to create a dedicated RSS feed just for these topics: https://phoneboy.com/ps/infosec.xml
 

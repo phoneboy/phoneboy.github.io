@@ -12,7 +12,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 #image:
 #  feature: patch_all_the_things.jpg
 #  credit: dargadgetz

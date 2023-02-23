@@ -12,7 +12,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 image:
   feature: what_you_see_here.jpg
   credit: Life/Ed Clark (C) 1945

@@ -11,7 +11,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 ---
 From [Palo Alto CEO: Beware the Internet of Things – and watch your car](http://www.networkworld.com/article/2917859/network-security/palo-alto-ceo-beware-the-internet-of-things-and-watch-your-car.html):
 

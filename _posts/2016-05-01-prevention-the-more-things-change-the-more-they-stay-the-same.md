@@ -12,7 +12,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 image:
   feature: cpx-2016-chicago.jpg
   #credit: Craig Morey

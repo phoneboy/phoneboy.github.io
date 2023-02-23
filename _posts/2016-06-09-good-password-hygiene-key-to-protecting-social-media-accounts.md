@@ -12,7 +12,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 redirect_from:
   - /2016/06/05/good-password-hygiene-key-to-protecting-social-media-accounts/
 image:

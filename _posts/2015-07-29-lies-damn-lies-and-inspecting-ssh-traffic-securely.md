@@ -11,7 +11,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 ---
 SSH is a wonderful tool for accessing remote systems via a CLI. It is encrypted, if set up properly, I can verify I am talking to the correct server using mutual key exchange and I can tunnel all kinds of stuff over it. If you're so inclined, you can even use an SSH tunnel as a SOCKS proxy. 
 

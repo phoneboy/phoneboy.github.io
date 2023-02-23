@@ -11,7 +11,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 ---
 For various reasons I decided to move the hosting of this blog to
 [Github Pages](https://pages.github.io). This also meant changing the

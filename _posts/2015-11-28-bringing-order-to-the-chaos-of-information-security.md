@@ -11,7 +11,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 ---
 It's very easy to get discouraged in the information security business. Every piece of software, every software as a service we use is potentially vulnerable to security threats: some known, many likely not known. When these threats are exploited--it's no longer a question of if--data and reputation loss are likely results. Even if you're secured the central repositories of this data, the client devices that access that data, perhaps even storing that data, have their own vulnerabilities and threats. When you sprinkle in configuration errors that are all too prevalent and permit more access to resources than absolutely required, it's easy to come to the conclusion that the game is over, the jig is up, we're compromised, and we're done.
 

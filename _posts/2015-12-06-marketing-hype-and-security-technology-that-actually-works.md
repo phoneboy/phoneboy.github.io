@@ -11,7 +11,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 ---
 There have been a few videos produced that show various ways to bypass Palo Alto Networks firewalls. This is the latest, complete with [a configuration file](http://pastebin.com/PXARPh2a) and [a pastebin log](http://pastebin.com/bM3U8tba) from the [Evader](http://evader.mcafee.com/) tool showing the various exploits that were triggered:
 

@@ -11,7 +11,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 ---
 I know a few articles have been written about this topic already elsewhere. That said, I sometimes will do a blog post so if I need to find something again, I know it will exist on my own blog.
 

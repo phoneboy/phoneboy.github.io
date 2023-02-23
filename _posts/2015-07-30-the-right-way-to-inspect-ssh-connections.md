@@ -11,7 +11,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 ---
 When talking with Check Point customers, a common request I hear is for the ability to "decrypt" SSH traffic, see inside of said traffic, and make security decisions based on what it finds, including blocking tunneling. [In my last post](/2015/07/29/lies-damn-lies-and-inspecting-ssh-traffic-securely/), I explain how the SSH Inspection feature provided by a couple of Check Point's competitors actually works and why you might want to think twice about using it. If you don't believe my analysis, check out the following video, which shows how **these SSH decryption features can be used against you**:
 

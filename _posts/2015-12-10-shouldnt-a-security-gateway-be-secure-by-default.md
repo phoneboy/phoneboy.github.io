@@ -10,7 +10,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 ---
 From [Palo Alto Networks: Best Practices for Securing Your Network from Layer 4 and Layer 7 Evasions](https://www.paloaltonetworks.com/documentation/61/pan-os/pan-os/threat-prevention/best-practices-for-securing-your-network-from-layer-4-and-layer-7-evasions.html#16594): 
 

@@ -11,7 +11,7 @@ tags: []
 author:
   login: phoneboy
   email: dwelch@phoneboy.com
-  display_name: Dameon Welch-Abernathy
+  display_name: Dameon Welch
 ---
 In order to allow your Nintendo Wii-U to participate in multiplayer online games, you have to configure your router/firewall/whatever in [one of three ways per Nintendo](http://en-americas-support.nintendo.com/app/answers/detail/a_id/13214/p/431):
 
